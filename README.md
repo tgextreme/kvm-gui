@@ -1,10 +1,21 @@
-# KVM Manager
+# KVM GUI Manager
 
-Un gestor gráfico moderno para máquinas virtuales KVM, inspirado en VirtualBox.
+Un gestor gráfico moderno para máquinas virtuales KVM con interfaz estilo VirtualBox.
+
+**Desarrollado por:** Tomás González
 
 ## Descripción
 
-KVM Manager es una aplicación de escritorio construida con Qt6 y C++ que proporciona una interfaz gráfica intuitiva para gestionar máquinas virtuales KVM. Está diseñado para ser familiar para usuarios de VirtualBox mientras aprovecha la potencia y eficiencia de KVM.
+KVM GUI Manager es una aplicación de escritorio multiplataforma construida con Qt6 y C++ que proporciona una interfaz gráfica intuitiva para gestionar máquinas virtuales KVM/QEMU. Diseñado para ser familiar para usuarios de VirtualBox mientras aprovecha toda la potencia y eficiencia del ecosistema KVM/libvirt de Linux.
+
+### 🎯 **Características Principales Implementadas**
+- ✅ **Gestión completa de ISOs y medios virtuales** desde la GUI
+- ✅ **Configuración de orden de arranque (boot order)** personalizable
+- ✅ **Comando QEMU completo** con soporte para KVM y fallback TCG
+- ✅ **Persistencia XML** de todas las configuraciones
+- ✅ **Interfaz estilo VirtualBox** con 6 pestañas de configuración avanzada
+- ✅ **Soporte de audio** con drivers compatibles (PulseAudio)
+- ✅ **UUIDs estándar RFC 4122** para compatibilidad total con QEMU
 
 ## Características
 
@@ -63,29 +74,83 @@ KVM Manager es una aplicación de escritorio construida con Qt6 y C++ que propor
 - **CMake**: Sistema de construcción (versión 3.16+)
 - **Compilador**: GCC 8+ o Clang 10+ con soporte C++17
 
-### Dependencias de Desarrollo
+## 📦 Instalación de Dependencias
+
+### 🐧 **Debian/Ubuntu**
 ```bash
-# Ubuntu/Debian
-sudo apt install build-essential cmake qt6-base-dev qt6-tools-dev libvirt-dev
+# Dependencias de desarrollo
+sudo apt update
+sudo apt install build-essential cmake git
+sudo apt install qt6-base-dev qt6-tools-dev qt6-base-dev-tools
+sudo apt install libqt6core6 libqt6widgets6 libqt6gui6
 
-# Fedora
-sudo dnf install gcc-c++ cmake qt6-qtbase-devel qt6-qttools-devel libvirt-devel
-
-# Arch Linux
-sudo pacman -S base-devel cmake qt6-base qt6-tools libvirt
+# Dependencias de ejecución (KVM/QEMU)
+sudo apt install qemu-kvm qemu-system-x86 qemu-utils
+sudo apt install libvirt-daemon-system libvirt-clients bridge-utils
+sudo apt install virt-manager # Opcional: para gestión adicional
 ```
 
-### Dependencias de Ejecución
+### 🎩 **Fedora/RHEL/CentOS**
 ```bash
-# Instalar KVM y libvirt
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+# Dependencias de desarrollo
+sudo dnf groupinstall "Development Tools"
+sudo dnf install cmake git qt6-qtbase-devel qt6-qttools-devel
 
+# Dependencias de ejecución (KVM/QEMU)
+sudo dnf install qemu-kvm qemu-img libvirt libvirt-daemon-config-network
+sudo dnf install libvirt-daemon-kvm virt-install virt-viewer bridge-utils
+```
+
+### 🦎 **openSUSE**
+```bash
+# Dependencias de desarrollo
+sudo zypper install -t pattern devel_basis
+sudo zypper install cmake git libqt6-qtbase-devel qt6-tools-devel
+
+# Dependencias de ejecución (KVM/QEMU)
+sudo zypper install qemu-kvm qemu-tools libvirt libvirt-daemon
+sudo zypper install bridge-utils virt-manager
+```
+
+### ⚡ **Arch Linux (Bonus)**
+```bash
+# Dependencias de desarrollo
+sudo pacman -S base-devel cmake git qt6-base qt6-tools
+
+# Dependencias de ejecución (KVM/QEMU)
+sudo pacman -S qemu-full libvirt virt-manager bridge-utils
+```
+
+## ⚙️ Configuración del Sistema
+
+### 🔧 **Configuración de KVM/libvirt (Todas las distribuciones)**
+```bash
 # Habilitar y iniciar servicios
 sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 
-# Agregar usuario al grupo libvirt
+# Agregar usuario a los grupos necesarios
 sudo usermod -a -G libvirt $USER
+sudo usermod -a -G kvm $USER
+
+# Reiniciar sesión para aplicar cambios de grupo
+# O ejecutar: newgrp libvirt
+
+# Verificar que KVM funciona
+sudo kvm-ok  # Ubuntu/Debian
+# O verificar manualmente:
+lsmod | grep kvm
+ls -la /dev/kvm
+```
+
+### 🛡️ **Permisos y Seguridad**
+```bash
+# Verificar permisos de libvirt
+sudo virsh list --all
+
+# Configurar red por defecto (si es necesario)
+sudo virsh net-start default
+sudo virsh net-autostart default
 ```
 
 ## Compilación
@@ -226,14 +291,86 @@ kvm-gui/
 - [ ] Monitoreo de rendimiento
 - [ ] Automatización y scripting
 
-## Licencia
+## 💡 Consejos y Mejores Prácticas
 
-Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+### 🚀 **Optimización de Rendimiento**
+- **Hardware:** Asegúrate de tener virtualización habilitada en BIOS/UEFI (Intel VT-x o AMD-V)
+- **Memoria:** Asigna suficiente RAM a las VMs, pero deja al menos 2GB para el sistema host
+- **CPU:** Usa múltiples cores para VMs que lo requieran (especialmente para compilación)
+- **Almacenamiento:** Prefiere SSD para mejor rendimiento de I/O
 
-## Contacto
+### 🔍 **Resolución de Problemas Comunes**
+```bash
+# Si aparece "Permission denied" con /dev/kvm:
+sudo chmod 666 /dev/kvm
+
+# Si libvirt no encuentra las VMs:
+sudo systemctl restart libvirtd
+
+# Para verificar logs de libvirt:
+sudo journalctl -u libvirtd -f
+
+# Si QEMU falla al iniciar:
+# - Verifica que el usuario esté en grupo 'libvirt' y 'kvm'
+# - Reinicia la sesión después de agregar al grupo
+# - Verifica que no hay VMs con el mismo UUID
+```
+
+### 📁 **Gestión de Archivos**
+- **Ubicación de VMs:** `~/.VM/` (creado automáticamente)
+- **Respaldo recomendado:** Hacer backup de archivos `.xml` y `.qcow2`
+- **Imágenes ISO:** Se recomienda mantenerlas en `/home/usuario/ISOs/` o `/opt/isos/`
+
+### 🌐 **Configuración de Red**
+- **NAT:** Configuración por defecto, acceso a internet automático
+- **Bridge:** Mejor para servidores que necesitan IPs en red local
+- **Host-Only:** Ideal para desarrollo y testing aislado
+
+## 📜 Licencias y Tecnologías Utilizadas
+
+### 🛠️ **Frameworks y Librerías**
+- **Qt6** - Framework GUI multiplataforma (LGPL v3)
+- **CMake** - Sistema de construcción (BSD 3-Clause)
+- **libvirt** - API de virtualización (LGPL v2.1)
+- **QEMU** - Emulador y virtualizador (GPL v2)
+
+### 📊 **Especificaciones**
+- **Lenguaje:** C++17
+- **Compilador:** GCC 8+ / Clang 10+
+- **Estándar:** Qt6 Design Guidelines
+- **XML:** Persistencia de configuración con QDomDocument
+
+### ⚖️ **Licencia del Proyecto**
+```
+MIT License - Copyright (c) 2025 Tomás González
+
+Se permite usar, copiar, modificar y distribuir este software
+con fines comerciales y no comerciales bajo los términos de la licencia MIT.
+```
+
+## 👨‍💻 Autor y Contacto
+
+**Desarrollador:** Tomás González  
+**Proyecto:** KVM GUI Manager - Gestor gráfico para KVM/QEMU  
+**Tecnologías:** Qt6, C++17, CMake, libvirt, QEMU  
 
 Para preguntas, sugerencias o reportes de errores, por favor abra un issue en el repositorio de GitHub.
 
 ---
 
-**Nota**: Este es un proyecto en desarrollo temprano. Algunas características pueden no estar completamente implementadas. Se recomienda usar en entornos de desarrollo/prueba solamente.# kvm-gui
+## 🏁 Estado del Desarrollo
+
+### ✅ **Completamente Funcional**
+- [x] Gestión de ISOs desde GUI (cargar, modificar, quitar)
+- [x] Configuración de orden de arranque personalizable
+- [x] Comandos QEMU completos con soporte KVM/TCG
+- [x] Persistencia XML de todas las configuraciones  
+- [x] UUIDs estándar RFC 4122 compatibles con QEMU
+- [x] Drivers de audio compatibles (PulseAudio)
+- [x] Interfaz completa estilo VirtualBox con tema oscuro
+- [x] Soporte para múltiples distribuciones Linux
+
+**🎯 El proyecto está listo para uso en producción para gestión básica de VMs KVM/QEMU.**
+
+---
+*Desarrollado con ❤️ para la comunidad Linux*
