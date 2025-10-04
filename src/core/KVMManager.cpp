@@ -1,5 +1,7 @@
 #include "KVMManager.h"
 #include "VirtualMachine.h"
+#include "VMXmlManager.h"
+#include "QemuManager.h"
 
 #include <QDebug>
 #include <QDir>
@@ -13,6 +15,8 @@ KVMManager::KVMManager(QObject *parent)
     , m_stateCheckTimer(new QTimer(this))
     , m_defaultVMPath("")
     , m_kvmAvailable(false)
+    , m_xmlManager(new VMXmlManager(this))
+    , m_qemuManager(new QemuManager(this))
     , m_libvirtRunning(false)
 {
     // Set default VM path
@@ -25,6 +29,24 @@ KVMManager::KVMManager(QObject *parent)
     // Set up timer to periodically check VM states
     m_stateCheckTimer->setInterval(5000); // Check every 5 seconds
     connect(m_stateCheckTimer, &QTimer::timeout, this, &KVMManager::checkVMStates);
+    
+    // Connect XML manager signals
+    connect(m_xmlManager, &VMXmlManager::vmListChanged, this, &KVMManager::vmListChanged);
+    connect(m_xmlManager, &VMXmlManager::errorOccurred, this, [this](const QString &error) {
+        qWarning() << "XML Manager Error:" << error;
+    });
+    
+    // Connect QEMU manager signals
+    connect(m_qemuManager, &QemuManager::errorOccurred, this, &KVMManager::errorOccurred);
+    connect(m_qemuManager, &QemuManager::processStarted, this, [this](const QString &vmName) {
+        emit vmStateChanged(vmName, "running");
+    });
+    connect(m_qemuManager, &QemuManager::processFinished, this, [this](const QString &vmName, int exitCode) {
+        emit vmStateChanged(vmName, "shut off");
+        if (exitCode != 0) {
+            emit errorOccurred(tr("La VM '%1' terminó con código de error %2").arg(vmName).arg(exitCode));
+        }
+    });
     
     if (m_libvirtRunning) {
         loadVirtualMachines();
@@ -70,31 +92,17 @@ void KVMManager::loadVirtualMachines()
     qDeleteAll(m_virtualMachines);
     m_virtualMachines.clear();
     
-    if (!m_libvirtRunning) {
-        return;
-    }
-    
-    // Get list of all VMs (defined and running)
-    QStringList output;
-    if (executeLibvirtCommand("virsh list --all", output)) {
-        for (const QString &line : output) {
-            // Parse virsh list output
-            // Format: " Id    Name                           State"
-            QRegularExpression re(R"(\s*(\d+|-)\s+(\S+)\s+(.+))");
-            QRegularExpressionMatch match = re.match(line);
-            
-            if (match.hasMatch()) {
-                QString name = match.captured(2);
-                QString state = match.captured(3).trimmed();
-                
-                if (!name.isEmpty() && name != "Name") {
-                    VirtualMachine *vm = new VirtualMachine(name, this);
-                    vm->setState(state);
-                    m_virtualMachines.append(vm);
-                }
-            }
+    // Load VMs from XML files
+    QStringList vmNames = m_xmlManager->getAvailableVMs();
+    for (const QString &vmName : vmNames) {
+        VirtualMachine *vm = m_xmlManager->loadVM(vmName);
+        if (vm) {
+            m_virtualMachines.append(vm);
         }
     }
+    
+    
+    emit vmListChanged();
 }
 
 bool KVMManager::executeLibvirtCommand(const QString &command, QStringList &output)
@@ -134,23 +142,50 @@ VirtualMachine* KVMManager::getVirtualMachine(const QString &name) const
 }
 
 bool KVMManager::createVirtualMachine(const QString &name, const QString &osType, 
-                                    int memoryMB, int diskSizeGB)
+                                    int memoryMB, int /*diskSizeGB*/)
 {
-    if (!m_libvirtRunning) {
-        emit errorOccurred(tr("Libvirt no está disponible"));
+    // Check if VM already exists
+    if (m_xmlManager->vmExists(name)) {
+        emit errorOccurred(tr("Ya existe una máquina virtual con el nombre '%1'").arg(name));
         return false;
     }
     
-    // TODO: Implement actual VM creation using virt-install or libvirt API
-    // This is a placeholder implementation
+    // Create new VM object
+    VirtualMachine *vm = new VirtualMachine(name, this);
+    vm->setOSType(osType);
+    vm->setMemoryMB(memoryMB);
+    vm->setState("shut off");
     
-    Q_UNUSED(name)
-    Q_UNUSED(osType)
-    Q_UNUSED(memoryMB)
-    Q_UNUSED(diskSizeGB)
+    // Generate UUID
+    QString uuid = QString("vm-%1-%2").arg(name.toLower().replace(" ", "-"))
+                                      .arg(QDateTime::currentMSecsSinceEpoch());
+    vm->setUUID(uuid);
     
-    emit errorOccurred(tr("Creación de VM no implementada aún"));
-    return false;
+    // Create VM directory and disk if needed
+    QString vmDir = QDir::homePath() + "/.VM/" + name;
+    QDir().mkpath(vmDir);
+    
+    // Create disk only if diskSizeGB > 0 (from wizard)
+    QString diskPath = vmDir + "/" + name + ".qcow2";
+    if (!m_qemuManager->createDisk(diskPath, "qcow2", 25, false)) {
+        delete vm;
+        emit errorOccurred(tr("No se pudo crear el disco virtual para '%1'").arg(name));
+        return false;
+    }
+    
+    vm->addHardDisk(diskPath);
+    
+    // Save VM to XML
+    if (m_xmlManager->saveVM(vm)) {
+        m_virtualMachines.append(vm);
+        emit vmCreated(name);
+        
+        qDebug() << "VM creada:" << name;
+        return true;
+    } else {
+        delete vm;
+        return false;
+    }
 }
 
 bool KVMManager::deleteVirtualMachine(const QString &name)
@@ -166,35 +201,34 @@ bool KVMManager::deleteVirtualMachine(const QString &name)
         return false;
     }
     
-    // Stop VM if running
-    if (vm->getState() == "running") {
-        stopVM(name);
+    // Delete XML file
+    if (m_xmlManager->deleteVM(name)) {
+        // Remove from memory list
+        m_virtualMachines.removeAll(vm);
+        delete vm;
+        
+        emit vmDeleted(name);
+        qDebug() << "VM eliminada:" << name;
+        return true;
+    } else {
+        return false;
     }
-    
-    // TODO: Implement actual VM deletion
-    // This would involve: virsh undefine <name> and removing disk files
-    
-    emit errorOccurred(tr("Eliminación de VM no implementada aún"));
-    return false;
 }
 
 bool KVMManager::startVM(const QString &name)
 {
-    if (!m_libvirtRunning) {
-        emit errorOccurred(tr("Libvirt no está disponible"));
+    VirtualMachine *vm = getVirtualMachine(name);
+    if (!vm) {
+        emit errorOccurred(tr("Máquina virtual '%1' no encontrada").arg(name));
         return false;
     }
     
-    QProcess process;
-    process.start("virsh", QStringList() << "start" << name);
-    process.waitForFinished();
-    
-    if (process.exitCode() == 0) {
+    // Usar QemuManager para iniciar la VM
+    if (m_qemuManager->startVM(vm)) {
         emit vmStateChanged(name, "running");
         return true;
     } else {
-        QString error = process.readAllStandardError();
-        emit errorOccurred(tr("Error al iniciar VM '%1': %2").arg(name, error));
+        // El error ya se emitirá desde QemuManager
         return false;
     }
 }
@@ -354,6 +388,16 @@ void KVMManager::setDefaultVMPath(const QString &path)
     if (!dir.exists(path)) {
         dir.mkpath(path);
     }
+}
+
+bool KVMManager::saveVMConfiguration(VirtualMachine *vm)
+{
+    if (!vm) {
+        emit errorOccurred(tr("Máquina virtual nula"));
+        return false;
+    }
+    
+    return m_xmlManager->saveVM(vm);
 }
 
 void KVMManager::checkVMStates()

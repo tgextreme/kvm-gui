@@ -8,6 +8,8 @@
 #include <QTimer>
 
 class VirtualMachine;
+class VMXmlManager;
+class QemuManager;
 
 class KVMManager : public QObject
 {
@@ -35,6 +37,9 @@ public:
     QString getVMState(const QString &name) const;
     bool isVMRunning(const QString &name) const;
     
+    // VM Configuration
+    bool saveVMConfiguration(VirtualMachine *vm);
+    
     // System Information
     bool isKVMAvailable() const;
     bool isLibvirtRunning() const;
@@ -46,6 +51,7 @@ public:
     void setDefaultVMPath(const QString &path);
 
 signals:
+    void vmListChanged();
     void vmStateChanged(const QString &name, const QString &state);
     void vmCreated(const QString &name);
     void vmDeleted(const QString &name);
@@ -65,6 +71,8 @@ private:
     QTimer *m_stateCheckTimer;
     QString m_defaultVMPath;
     bool m_kvmAvailable;
+    VMXmlManager *m_xmlManager;
+    QemuManager *m_qemuManager;
     bool m_libvirtRunning;
 };
 

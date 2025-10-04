@@ -1,5 +1,7 @@
 #include "VMListWidget.h"
 #include "../models/VMListModel.h"
+#include "../core/KVMManager.h"
+#include "../core/VirtualMachine.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -15,8 +17,9 @@
 #include <QApplication>
 #include <QStyle>
 
-VMListWidget::VMListWidget(QWidget *parent)
+VMListWidget::VMListWidget(KVMManager *kvmManager, QWidget *parent)
     : QWidget(parent)
+    , m_kvmManager(kvmManager)
     , m_mainLayout(nullptr)
     , m_searchLayout(nullptr)
     , m_filterLayout(nullptr)
@@ -94,21 +97,19 @@ void VMListWidget::populateVMList()
     m_vmListWidget->clear();
     m_allVMs.clear();
     
-    // Add some example VMs for demonstration
-    QStringList demoVMs = {
-        "Ubuntu 22.04 LTS|Ubuntu Linux|Apagada",
-        "Windows 11|Microsoft Windows|Apagada", 
-        "Debian 12|Debian GNU/Linux|Apagada",
-        "CentOS 9 Stream|Red Hat Linux|Apagada",
-        "Fedora 39|Fedora Linux|Apagada"
-    };
+    if (!m_kvmManager) {
+        return;
+    }
     
-    for (const QString &vmData : demoVMs) {
-        QStringList parts = vmData.split('|');
-        if (parts.size() >= 3) {
-            QListWidgetItem *item = createVMItem(parts[0], parts[1], parts[2]);
+    // Load VMs from XML files
+    QStringList vmNames = m_kvmManager->getVirtualMachines();
+    
+    for (const QString &vmName : vmNames) {
+        VirtualMachine *vm = m_kvmManager->getVirtualMachine(vmName);
+        if (vm) {
+            QListWidgetItem *item = createVMItem(vm->getName(), vm->getOSType(), vm->getState());
             m_vmListWidget->addItem(item);
-            m_allVMs.append(parts[0]);
+            m_allVMs.append(vm->getName());
         }
     }
     

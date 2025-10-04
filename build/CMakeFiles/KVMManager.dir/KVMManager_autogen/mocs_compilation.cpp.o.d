@@ -341,12 +341,12 @@ CMakeFiles/KVMManager.dir/KVMManager_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmochelpers.h \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/moc_VirtualMachine.cpp \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/../../../src/core/VirtualMachine.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QDateTime \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/moc_QemuManager.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/../../../src/core/QemuManager.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdirlisting.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
@@ -366,18 +366,59 @@ CMakeFiles/KVMManager.dir/KVMManager_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/q23utility.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
+ /usr/include/c++/14/filesystem /usr/include/c++/14/bits/fs_fwd.h \
+ /usr/include/c++/14/bits/fs_path.h /usr/include/c++/14/locale \
+ /usr/include/c++/14/bits/locale_facets.h /usr/include/c++/14/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/ctype_base.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/ctype_inline.h \
+ /usr/include/c++/14/bits/locale_facets.tcc \
+ /usr/include/c++/14/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14/bits/codecvt.h \
+ /usr/include/c++/14/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14/bits/locale_conv.h /usr/include/c++/14/iomanip \
+ /usr/include/c++/14/bits/quoted_string.h /usr/include/c++/14/sstream \
+ /usr/include/c++/14/istream /usr/include/c++/14/ios \
+ /usr/include/c++/14/bits/basic_ios.h \
+ /usr/include/c++/14/bits/basic_ios.tcc /usr/include/c++/14/ostream \
+ /usr/include/c++/14/bits/ostream.tcc \
+ /usr/include/c++/14/bits/istream.tcc \
+ /usr/include/c++/14/bits/sstream.tcc /usr/include/c++/14/codecvt \
+ /usr/include/c++/14/bits/fs_dir.h /usr/include/c++/14/bits/fs_ops.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimezone.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/moc_VMXmlManager.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/../../../src/core/VMXmlManager.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/QDomDocument \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qdom.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qtxmlglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qtxml-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qtxmlexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/QDomElement \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDateTime \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/moc_VirtualMachine.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/PRMOGMWJPH/../../../src/core/VirtualMachine.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
  /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/M4YTXQ7V2H/moc_VMListModel.cpp \
  /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/M4YTXQ7V2H/../../../src/models/VMListModel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QAbstractListModel \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_MainWindow.cpp \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/MainWindow.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_AdvancedVMConfigDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/AdvancedVMConfigDialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDialog \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtgui-config.h \
@@ -416,17 +457,8 @@ CMakeFiles/KVMManager.dir/KVMManager_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTabWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenuBar \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenubar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenu.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolBar \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStatusBar \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstatusbar.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSplitter \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsplitter.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
@@ -434,45 +466,28 @@ CMakeFiles/KVMManager.dir/KVMManager_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QAction \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/QActionGroup \
- /usr/include/x86_64-linux-gnu/qt6/QtGui/qactiongroup.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFormLayout \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qformlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLayout \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGroupBox \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_VMDetailsWidget.cpp \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/VMDetailsWidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollArea \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGroupBox \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFrame \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QProgressBar \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qprogressbar.h \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_VMListWidget.cpp \
- /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/VMListWidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QComboBox \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qcombobox.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemdelegate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyleoption.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractspinbox.h \
@@ -482,9 +497,99 @@ CMakeFiles/KVMManager.dir/KVMManager_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyle.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabbar.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qrubberband.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QComboBox \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qcombobox.h
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QCheckBox \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qcheckbox.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSpinBox \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qspinbox.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSlider \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qslider.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QRadioButton \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qradiobutton.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTreeWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreewidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreeview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtreewidgetitemiterator.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTableWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtablewidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtableview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QProgressBar \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qprogressbar.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSplitter \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsplitter.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHeaderView \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qheaderview.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_DiskManagerDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/DiskManagerDialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolButton \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbutton.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFileDialog \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qfiledialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMessageBox \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmessagebox.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialogbuttonbox.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenu \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenu.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMenuBar \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenubar.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenu.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QToolBar \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtoolbar.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStatusBar \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstatusbar.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_MainWindow.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/MainWindow.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QAction \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QActionGroup \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qactiongroup.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_MediaManagerDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/MediaManagerDialog.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_NetworkManagerDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/NetworkManagerDialog.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_NewVMDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/NewVMDialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWizard \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwizard.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWizardPage \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_PreferencesDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/PreferencesDialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTreeWidgetItem \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_SnapshotManagerDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/SnapshotManagerDialog.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDateTimeEdit \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdatetimeedit.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_VMConfigDialog.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/VMConfigDialog.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_VMCreationWizard.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/VMCreationWizard.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QButtonGroup \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qbuttongroup.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_VMDetailsWidget.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/VMDetailsWidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QScrollArea \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFrame \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/moc_VMListWidget.cpp \
+ /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/YPKJ5OE7LN/../../../src/ui/VMListWidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem

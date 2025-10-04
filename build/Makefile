@@ -272,6 +272,54 @@ src/core/KVMManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.s
 .PHONY : src/core/KVMManager.cpp.s
 
+src/core/QemuManager.o: src/core/QemuManager.cpp.o
+.PHONY : src/core/QemuManager.o
+
+# target to build an object file
+src/core/QemuManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o
+.PHONY : src/core/QemuManager.cpp.o
+
+src/core/QemuManager.i: src/core/QemuManager.cpp.i
+.PHONY : src/core/QemuManager.i
+
+# target to preprocess a source file
+src/core/QemuManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.i
+.PHONY : src/core/QemuManager.cpp.i
+
+src/core/QemuManager.s: src/core/QemuManager.cpp.s
+.PHONY : src/core/QemuManager.s
+
+# target to generate assembly for a file
+src/core/QemuManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.s
+.PHONY : src/core/QemuManager.cpp.s
+
+src/core/VMXmlManager.o: src/core/VMXmlManager.cpp.o
+.PHONY : src/core/VMXmlManager.o
+
+# target to build an object file
+src/core/VMXmlManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o
+.PHONY : src/core/VMXmlManager.cpp.o
+
+src/core/VMXmlManager.i: src/core/VMXmlManager.cpp.i
+.PHONY : src/core/VMXmlManager.i
+
+# target to preprocess a source file
+src/core/VMXmlManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.i
+.PHONY : src/core/VMXmlManager.cpp.i
+
+src/core/VMXmlManager.s: src/core/VMXmlManager.cpp.s
+.PHONY : src/core/VMXmlManager.s
+
+# target to generate assembly for a file
+src/core/VMXmlManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.s
+.PHONY : src/core/VMXmlManager.cpp.s
+
 src/core/VirtualMachine.o: src/core/VirtualMachine.cpp.o
 .PHONY : src/core/VirtualMachine.o
 
@@ -344,6 +392,54 @@ src/models/VMListModel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.s
 .PHONY : src/models/VMListModel.cpp.s
 
+src/ui/AdvancedVMConfigDialog.o: src/ui/AdvancedVMConfigDialog.cpp.o
+.PHONY : src/ui/AdvancedVMConfigDialog.o
+
+# target to build an object file
+src/ui/AdvancedVMConfigDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o
+.PHONY : src/ui/AdvancedVMConfigDialog.cpp.o
+
+src/ui/AdvancedVMConfigDialog.i: src/ui/AdvancedVMConfigDialog.cpp.i
+.PHONY : src/ui/AdvancedVMConfigDialog.i
+
+# target to preprocess a source file
+src/ui/AdvancedVMConfigDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.i
+.PHONY : src/ui/AdvancedVMConfigDialog.cpp.i
+
+src/ui/AdvancedVMConfigDialog.s: src/ui/AdvancedVMConfigDialog.cpp.s
+.PHONY : src/ui/AdvancedVMConfigDialog.s
+
+# target to generate assembly for a file
+src/ui/AdvancedVMConfigDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.s
+.PHONY : src/ui/AdvancedVMConfigDialog.cpp.s
+
+src/ui/DiskManagerDialog.o: src/ui/DiskManagerDialog.cpp.o
+.PHONY : src/ui/DiskManagerDialog.o
+
+# target to build an object file
+src/ui/DiskManagerDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o
+.PHONY : src/ui/DiskManagerDialog.cpp.o
+
+src/ui/DiskManagerDialog.i: src/ui/DiskManagerDialog.cpp.i
+.PHONY : src/ui/DiskManagerDialog.i
+
+# target to preprocess a source file
+src/ui/DiskManagerDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.i
+.PHONY : src/ui/DiskManagerDialog.cpp.i
+
+src/ui/DiskManagerDialog.s: src/ui/DiskManagerDialog.cpp.s
+.PHONY : src/ui/DiskManagerDialog.s
+
+# target to generate assembly for a file
+src/ui/DiskManagerDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.s
+.PHONY : src/ui/DiskManagerDialog.cpp.s
+
 src/ui/MainWindow.o: src/ui/MainWindow.cpp.o
 .PHONY : src/ui/MainWindow.o
 
@@ -367,6 +463,174 @@ src/ui/MainWindow.s: src/ui/MainWindow.cpp.s
 src/ui/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/MainWindow.cpp.s
 .PHONY : src/ui/MainWindow.cpp.s
+
+src/ui/MediaManagerDialog.o: src/ui/MediaManagerDialog.cpp.o
+.PHONY : src/ui/MediaManagerDialog.o
+
+# target to build an object file
+src/ui/MediaManagerDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o
+.PHONY : src/ui/MediaManagerDialog.cpp.o
+
+src/ui/MediaManagerDialog.i: src/ui/MediaManagerDialog.cpp.i
+.PHONY : src/ui/MediaManagerDialog.i
+
+# target to preprocess a source file
+src/ui/MediaManagerDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.i
+.PHONY : src/ui/MediaManagerDialog.cpp.i
+
+src/ui/MediaManagerDialog.s: src/ui/MediaManagerDialog.cpp.s
+.PHONY : src/ui/MediaManagerDialog.s
+
+# target to generate assembly for a file
+src/ui/MediaManagerDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.s
+.PHONY : src/ui/MediaManagerDialog.cpp.s
+
+src/ui/NetworkManagerDialog.o: src/ui/NetworkManagerDialog.cpp.o
+.PHONY : src/ui/NetworkManagerDialog.o
+
+# target to build an object file
+src/ui/NetworkManagerDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o
+.PHONY : src/ui/NetworkManagerDialog.cpp.o
+
+src/ui/NetworkManagerDialog.i: src/ui/NetworkManagerDialog.cpp.i
+.PHONY : src/ui/NetworkManagerDialog.i
+
+# target to preprocess a source file
+src/ui/NetworkManagerDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.i
+.PHONY : src/ui/NetworkManagerDialog.cpp.i
+
+src/ui/NetworkManagerDialog.s: src/ui/NetworkManagerDialog.cpp.s
+.PHONY : src/ui/NetworkManagerDialog.s
+
+# target to generate assembly for a file
+src/ui/NetworkManagerDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.s
+.PHONY : src/ui/NetworkManagerDialog.cpp.s
+
+src/ui/NewVMDialog.o: src/ui/NewVMDialog.cpp.o
+.PHONY : src/ui/NewVMDialog.o
+
+# target to build an object file
+src/ui/NewVMDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o
+.PHONY : src/ui/NewVMDialog.cpp.o
+
+src/ui/NewVMDialog.i: src/ui/NewVMDialog.cpp.i
+.PHONY : src/ui/NewVMDialog.i
+
+# target to preprocess a source file
+src/ui/NewVMDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.i
+.PHONY : src/ui/NewVMDialog.cpp.i
+
+src/ui/NewVMDialog.s: src/ui/NewVMDialog.cpp.s
+.PHONY : src/ui/NewVMDialog.s
+
+# target to generate assembly for a file
+src/ui/NewVMDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.s
+.PHONY : src/ui/NewVMDialog.cpp.s
+
+src/ui/PreferencesDialog.o: src/ui/PreferencesDialog.cpp.o
+.PHONY : src/ui/PreferencesDialog.o
+
+# target to build an object file
+src/ui/PreferencesDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o
+.PHONY : src/ui/PreferencesDialog.cpp.o
+
+src/ui/PreferencesDialog.i: src/ui/PreferencesDialog.cpp.i
+.PHONY : src/ui/PreferencesDialog.i
+
+# target to preprocess a source file
+src/ui/PreferencesDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.i
+.PHONY : src/ui/PreferencesDialog.cpp.i
+
+src/ui/PreferencesDialog.s: src/ui/PreferencesDialog.cpp.s
+.PHONY : src/ui/PreferencesDialog.s
+
+# target to generate assembly for a file
+src/ui/PreferencesDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.s
+.PHONY : src/ui/PreferencesDialog.cpp.s
+
+src/ui/SnapshotManagerDialog.o: src/ui/SnapshotManagerDialog.cpp.o
+.PHONY : src/ui/SnapshotManagerDialog.o
+
+# target to build an object file
+src/ui/SnapshotManagerDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o
+.PHONY : src/ui/SnapshotManagerDialog.cpp.o
+
+src/ui/SnapshotManagerDialog.i: src/ui/SnapshotManagerDialog.cpp.i
+.PHONY : src/ui/SnapshotManagerDialog.i
+
+# target to preprocess a source file
+src/ui/SnapshotManagerDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.i
+.PHONY : src/ui/SnapshotManagerDialog.cpp.i
+
+src/ui/SnapshotManagerDialog.s: src/ui/SnapshotManagerDialog.cpp.s
+.PHONY : src/ui/SnapshotManagerDialog.s
+
+# target to generate assembly for a file
+src/ui/SnapshotManagerDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.s
+.PHONY : src/ui/SnapshotManagerDialog.cpp.s
+
+src/ui/VMConfigDialog.o: src/ui/VMConfigDialog.cpp.o
+.PHONY : src/ui/VMConfigDialog.o
+
+# target to build an object file
+src/ui/VMConfigDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o
+.PHONY : src/ui/VMConfigDialog.cpp.o
+
+src/ui/VMConfigDialog.i: src/ui/VMConfigDialog.cpp.i
+.PHONY : src/ui/VMConfigDialog.i
+
+# target to preprocess a source file
+src/ui/VMConfigDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.i
+.PHONY : src/ui/VMConfigDialog.cpp.i
+
+src/ui/VMConfigDialog.s: src/ui/VMConfigDialog.cpp.s
+.PHONY : src/ui/VMConfigDialog.s
+
+# target to generate assembly for a file
+src/ui/VMConfigDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.s
+.PHONY : src/ui/VMConfigDialog.cpp.s
+
+src/ui/VMCreationWizard.o: src/ui/VMCreationWizard.cpp.o
+.PHONY : src/ui/VMCreationWizard.o
+
+# target to build an object file
+src/ui/VMCreationWizard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o
+.PHONY : src/ui/VMCreationWizard.cpp.o
+
+src/ui/VMCreationWizard.i: src/ui/VMCreationWizard.cpp.i
+.PHONY : src/ui/VMCreationWizard.i
+
+# target to preprocess a source file
+src/ui/VMCreationWizard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.i
+.PHONY : src/ui/VMCreationWizard.cpp.i
+
+src/ui/VMCreationWizard.s: src/ui/VMCreationWizard.cpp.s
+.PHONY : src/ui/VMCreationWizard.s
+
+# target to generate assembly for a file
+src/ui/VMCreationWizard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KVMManager.dir/build.make CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.s
+.PHONY : src/ui/VMCreationWizard.cpp.s
 
 src/ui/VMDetailsWidget.o: src/ui/VMDetailsWidget.cpp.o
 .PHONY : src/ui/VMDetailsWidget.o
@@ -440,6 +704,12 @@ help:
 	@echo "... src/core/KVMManager.o"
 	@echo "... src/core/KVMManager.i"
 	@echo "... src/core/KVMManager.s"
+	@echo "... src/core/QemuManager.o"
+	@echo "... src/core/QemuManager.i"
+	@echo "... src/core/QemuManager.s"
+	@echo "... src/core/VMXmlManager.o"
+	@echo "... src/core/VMXmlManager.i"
+	@echo "... src/core/VMXmlManager.s"
 	@echo "... src/core/VirtualMachine.o"
 	@echo "... src/core/VirtualMachine.i"
 	@echo "... src/core/VirtualMachine.s"
@@ -449,9 +719,36 @@ help:
 	@echo "... src/models/VMListModel.o"
 	@echo "... src/models/VMListModel.i"
 	@echo "... src/models/VMListModel.s"
+	@echo "... src/ui/AdvancedVMConfigDialog.o"
+	@echo "... src/ui/AdvancedVMConfigDialog.i"
+	@echo "... src/ui/AdvancedVMConfigDialog.s"
+	@echo "... src/ui/DiskManagerDialog.o"
+	@echo "... src/ui/DiskManagerDialog.i"
+	@echo "... src/ui/DiskManagerDialog.s"
 	@echo "... src/ui/MainWindow.o"
 	@echo "... src/ui/MainWindow.i"
 	@echo "... src/ui/MainWindow.s"
+	@echo "... src/ui/MediaManagerDialog.o"
+	@echo "... src/ui/MediaManagerDialog.i"
+	@echo "... src/ui/MediaManagerDialog.s"
+	@echo "... src/ui/NetworkManagerDialog.o"
+	@echo "... src/ui/NetworkManagerDialog.i"
+	@echo "... src/ui/NetworkManagerDialog.s"
+	@echo "... src/ui/NewVMDialog.o"
+	@echo "... src/ui/NewVMDialog.i"
+	@echo "... src/ui/NewVMDialog.s"
+	@echo "... src/ui/PreferencesDialog.o"
+	@echo "... src/ui/PreferencesDialog.i"
+	@echo "... src/ui/PreferencesDialog.s"
+	@echo "... src/ui/SnapshotManagerDialog.o"
+	@echo "... src/ui/SnapshotManagerDialog.i"
+	@echo "... src/ui/SnapshotManagerDialog.s"
+	@echo "... src/ui/VMConfigDialog.o"
+	@echo "... src/ui/VMConfigDialog.i"
+	@echo "... src/ui/VMConfigDialog.s"
+	@echo "... src/ui/VMCreationWizard.o"
+	@echo "... src/ui/VMCreationWizard.i"
+	@echo "... src/ui/VMCreationWizard.s"
 	@echo "... src/ui/VMDetailsWidget.o"
 	@echo "... src/ui/VMDetailsWidget.i"
 	@echo "... src/ui/VMDetailsWidget.s"

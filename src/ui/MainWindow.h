@@ -15,6 +15,10 @@
 class VMListWidget;
 class VMDetailsWidget;
 class KVMManager;
+class MediaManagerDialog;
+class NetworkManagerDialog;
+class SnapshotManagerDialog;
+class AdvancedVMConfigDialog;
 
 class MainWindow : public QMainWindow
 {
@@ -35,6 +39,15 @@ private slots:
     void showPreferences();
     void showAbout();
     void onVMSelectionChanged(const QString &vmName);
+    
+    // New managers
+    void showDiskManager();
+    void showMediaManager();
+    void showNetworkManager();
+    void showSnapshotManager();
+    void importVM();
+    void exportVM();
+    void cloneVM();
 
 private:
     void setupUI();
@@ -65,6 +78,15 @@ private:
     QAction *m_exitAction;
     QAction *m_aboutAction;
     QAction *m_aboutQtAction;
+    
+    // New manager actions
+    QAction *m_diskManagerAction;
+    QAction *m_mediaManagerAction;
+    QAction *m_networkManagerAction;
+    QAction *m_snapshotManagerAction;
+    QAction *m_importVMAction;
+    QAction *m_exportVMAction;
+    QAction *m_cloneVMAction;
     
     // Menus
     QMenu *m_fileMenu;

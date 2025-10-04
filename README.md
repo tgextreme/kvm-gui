@@ -31,6 +31,28 @@ KVM Manager es una aplicación de escritorio construida con Qt6 y C++ que propor
 - Soporte multiplataforma (Linux principalmente)
 - Arquitectura modular y extensible
 
+### 🛠️ Administradores Especializados
+- **Administrador de medios virtuales**: Gestión completa de discos duros, CD/DVD y disquetes
+  - Formatos soportados: VDI, VMDK, VHD, QCOW2, ISO, IMG
+  - Operaciones: agregar, quitar, copiar, mover, redimensionar
+  - Vista detallada con información de uso y propiedades
+
+- **Administrador de red**: Configuración de redes virtuales globales
+  - Redes NAT con CIDR personalizable y reenvío de puertos
+  - Redes Host-Only con configuración DHCP completa
+  - Gestión centralizada de todas las redes virtuales
+
+- **Administrador de instantáneas**: Control avanzado de snapshots
+  - Árbol jerárquico visual de instantáneas
+  - Creación con descripción personalizada
+  - Restauración, eliminación y clonado desde instantáneas
+
+### 📦 Configuración Avanzada
+- **Preferencias globales**: 7 pestañas de configuración (General, Entrada, Red, Proxy, etc.)
+- **Configuración por VM**: 10 pestañas especializadas (Sistema, Pantalla, Audio, etc.)  
+- **Asistente de creación**: Wizard guiado de 4 páginas para nuevas VMs
+- **Importación/Exportación**: Soporte para formatos OVA/OVF estándar
+
 ## Requisitos del Sistema
 
 ### Software Requerido
@@ -155,21 +177,46 @@ kvm-gui/
 ## Estado del Desarrollo
 
 ### ✅ Implementado
-- [x] Estructura básica del proyecto con CMake
-- [x] Interfaz principal con layout de VirtualBox
-- [x] Lista de máquinas virtuales con filtrado
-- [x] Panel de detalles con información de VM
-- [x] Integración básica con libvirt
-- [x] Barra de menús y herramientas completa
-- [x] Tema oscuro moderno
+- [x] **Estructura base del proyecto** con CMake y Qt6
+- [x] **Interfaz principal** estilo VirtualBox
+  - Panel lateral con lista filtrable de VMs
+  - Panel de detalles organizado por secciones
+  - Barra de menús y herramientas completa
+  - Tema oscuro moderno
+- [x] **Sistema de configuración completo**
+  - Preferencias globales con 7 pestañas
+  - Configuración de VM con 10 pestañas
+  - Persistencia de configuración con QSettings
+- [x] **Arquitectura modular**
+  - Separación clara MVC
+  - Integración con libvirt/KVM
+  - Gestión de estados de VM
+- [x] **Localización completa** en español
+- [x] **Iconos del sistema** integrados
 
 ### 🚧 En Desarrollo
-- [ ] Diálogos de creación/configuración de VM
+- [x] **Diálogo de Preferencias Globales** - Configuración completa del programa
+  - 🏷️ Idioma y localización
+  - 🗂️ Carpetas predeterminadas (VMs, instantáneas)
+  - 🔄 Configuración de actualizaciones
+  - 🎹 Atajos de teclado personalizables
+  - 🌐 Gestión de redes (NAT, solo-anfitrión)
+  - 🔧 Configuración de proxy
+  - 🎨 Personalización de interfaz
+- [x] **Diálogo de Configuración de VM** - Configuración detallada por máquina
+  - 🧾 General (nombre, SO, descripción, cifrado)
+  - ⚙️ Sistema (RAM, CPU, chipset, aceleración)
+  - 💻 Pantalla (memoria de vídeo, monitores, grabación)
+  - 💽 Almacenamiento (discos duros, controladores, CD/DVD)
+  - 🔊 Audio (controladores, entrada/salida)
+  - 🌐 Red (hasta 4 adaptadores configurables)
+  - 📱 Puertos serie y USB
+  - 🔗 Carpetas compartidas
+  - 🖥️ Interfaz de usuario personalizable
 - [ ] Control real de máquinas virtuales (start/stop/pause)
-- [ ] Gestión de almacenamiento (discos, ISOs)
-- [ ] Configuración de red
+- [ ] Gestión avanzada de almacenamiento (crear/redimensionar discos)
 - [ ] Sistema de instantáneas
-- [ ] Carpetas compartidas
+- [ ] Asistente de creación de nuevas VMs
 
 ### 📋 Planificado
 - [ ] Consola integrada (VNC/Spice)

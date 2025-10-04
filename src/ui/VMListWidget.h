@@ -12,13 +12,14 @@
 #include <QComboBox>
 
 class VMListModel;
+class KVMManager;
 
 class VMListWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit VMListWidget(QWidget *parent = nullptr);
+    explicit VMListWidget(KVMManager *kvmManager, QWidget *parent = nullptr);
     
     QString getSelectedVM() const;
     void setSelectedVM(const QString &vmName);
@@ -41,6 +42,9 @@ private:
     void filterVMs();
     QListWidgetItem* createVMItem(const QString &name, const QString &os, const QString &state);
 
+    // Data
+    KVMManager *m_kvmManager;
+
     // UI components
     QVBoxLayout *m_mainLayout;
     QHBoxLayout *m_searchLayout;
@@ -54,7 +58,6 @@ private:
     QListWidget *m_vmListWidget;
     QLabel *m_vmCountLabel;
     
-    // Data
     VMListModel *m_model;
     QStringList m_allVMs;
     QString m_currentFilter;

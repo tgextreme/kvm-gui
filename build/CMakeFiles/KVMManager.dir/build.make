@@ -156,10 +156,136 @@ CMakeFiles/KVMManager.dir/src/ui/VMDetailsWidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/VMDetailsWidget.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/VMDetailsWidget.cpp -o CMakeFiles/KVMManager.dir/src/ui/VMDetailsWidget.cpp.s
 
+CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/PreferencesDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/PreferencesDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/PreferencesDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/PreferencesDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/VMConfigDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/VMConfigDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/VMConfigDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/VMConfigDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/NewVMDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/NewVMDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/NewVMDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/NewVMDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/VMCreationWizard.cpp
+CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/VMCreationWizard.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/VMCreationWizard.cpp > CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/VMCreationWizard.cpp -o CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/DiskManagerDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/DiskManagerDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/DiskManagerDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/DiskManagerDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/MediaManagerDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/MediaManagerDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/MediaManagerDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/MediaManagerDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/NetworkManagerDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/NetworkManagerDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/NetworkManagerDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/NetworkManagerDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/SnapshotManagerDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/SnapshotManagerDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/SnapshotManagerDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/SnapshotManagerDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.s
+
+CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o: /home/usuario/Documentos/kvm-gui/src/ui/AdvancedVMConfigDialog.cpp
+CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o -MF CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o.d -o CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o -c /home/usuario/Documentos/kvm-gui/src/ui/AdvancedVMConfigDialog.cpp
+
+CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/ui/AdvancedVMConfigDialog.cpp > CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.i
+
+CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/ui/AdvancedVMConfigDialog.cpp -o CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.s
+
 CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o: CMakeFiles/KVMManager.dir/flags.make
 CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o: /home/usuario/Documentos/kvm-gui/src/core/KVMManager.cpp
 CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o -MF CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o.d -o CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o -c /home/usuario/Documentos/kvm-gui/src/core/KVMManager.cpp
 
 CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.i: cmake_force
@@ -173,7 +299,7 @@ CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.s: cmake_force
 CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o: CMakeFiles/KVMManager.dir/flags.make
 CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o: /home/usuario/Documentos/kvm-gui/src/core/VirtualMachine.cpp
 CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o -MF CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o.d -o CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o -c /home/usuario/Documentos/kvm-gui/src/core/VirtualMachine.cpp
 
 CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.i: cmake_force
@@ -184,10 +310,38 @@ CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/core/VirtualMachine.cpp -o CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.s
 
+CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o: /home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.cpp
+CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o -MF CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o.d -o CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o -c /home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.cpp
+
+CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.cpp > CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.i
+
+CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.cpp -o CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.s
+
+CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o: CMakeFiles/KVMManager.dir/flags.make
+CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o: /home/usuario/Documentos/kvm-gui/src/core/QemuManager.cpp
+CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o -MF CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o.d -o CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o -c /home/usuario/Documentos/kvm-gui/src/core/QemuManager.cpp
+
+CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Documentos/kvm-gui/src/core/QemuManager.cpp > CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.i
+
+CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Documentos/kvm-gui/src/core/QemuManager.cpp -o CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.s
+
 CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o: CMakeFiles/KVMManager.dir/flags.make
 CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o: /home/usuario/Documentos/kvm-gui/src/models/VMListModel.cpp
 CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o -MF CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o.d -o CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o -c /home/usuario/Documentos/kvm-gui/src/models/VMListModel.cpp
 
 CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.i: cmake_force
@@ -201,7 +355,7 @@ CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.s: cmake_force
 CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o: CMakeFiles/KVMManager.dir/flags.make
 CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o: KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp
 CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o: CMakeFiles/KVMManager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o -MF CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o.d -o CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o -c /home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp
 
 CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.i: cmake_force
@@ -219,8 +373,19 @@ KVMManager_OBJECTS = \
 "CMakeFiles/KVMManager.dir/src/ui/MainWindow.cpp.o" \
 "CMakeFiles/KVMManager.dir/src/ui/VMListWidget.cpp.o" \
 "CMakeFiles/KVMManager.dir/src/ui/VMDetailsWidget.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o" \
 "CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o" \
 "CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o" \
+"CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o" \
 "CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o" \
 "CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o"
 
@@ -232,19 +397,31 @@ KVMManager: CMakeFiles/KVMManager.dir/src/main.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/src/ui/MainWindow.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/src/ui/VMListWidget.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/src/ui/VMDetailsWidget.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/PreferencesDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/VMConfigDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/NewVMDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/VMCreationWizard.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/DiskManagerDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/MediaManagerDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/NetworkManagerDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/SnapshotManagerDialog.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/ui/AdvancedVMConfigDialog.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/src/core/VirtualMachine.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/core/VMXmlManager.cpp.o
+KVMManager: CMakeFiles/KVMManager.dir/src/core/QemuManager.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/src/models/VMListModel.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp.o
 KVMManager: CMakeFiles/KVMManager.dir/build.make
 KVMManager: CMakeFiles/KVMManager.dir/compiler_depend.ts
 KVMManager: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.8.2
 KVMManager: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.8.2
+KVMManager: /usr/lib/x86_64-linux-gnu/libQt6Xml.so.6.8.2
 KVMManager: /usr/lib/x86_64-linux-gnu/libGLX.so
 KVMManager: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 KVMManager: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.8.2
 KVMManager: CMakeFiles/KVMManager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable KVMManager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/usuario/Documentos/kvm-gui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable KVMManager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/KVMManager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

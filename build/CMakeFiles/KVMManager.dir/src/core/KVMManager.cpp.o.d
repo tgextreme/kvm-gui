@@ -367,8 +367,7 @@ CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/q23utility.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+ /home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdirlisting.h \
@@ -398,6 +397,17 @@ CMakeFiles/KVMManager.dir/src/core/KVMManager.cpp.o: \
  /usr/include/c++/14/bits/fs_dir.h /usr/include/c++/14/bits/fs_ops.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimezone.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/QDomDocument \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qdom.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qtxmlglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qtxml-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/qtxmlexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtXml/QDomElement \
+ /home/usuario/Documentos/kvm-gui/src/core/QemuManager.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qfileinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QStandardPaths \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qstandardpaths.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QRegularExpression \

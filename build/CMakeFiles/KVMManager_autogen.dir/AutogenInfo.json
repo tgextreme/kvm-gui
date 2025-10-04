@@ -223,6 +223,15 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlConfigVersionImpl.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlConfig.cmake",
+		"/usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlDependencies.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlTargets.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlTargets-none.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlAdditionalTargetInfo.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Xml/Qt6XmlVersionlessAliasTargets.cmake",
 		"/home/usuario/Documentos/kvm-gui/resources/icons.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/usuario/Documentos/kvm-gui",
@@ -238,6 +247,18 @@
 			null
 		],
 		[
+			"/home/usuario/Documentos/kvm-gui/src/core/QemuManager.h",
+			"MU",
+			"PRMOGMWJPH/moc_QemuManager.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.h",
+			"MU",
+			"PRMOGMWJPH/moc_VMXmlManager.cpp",
+			null
+		],
+		[
 			"/home/usuario/Documentos/kvm-gui/src/core/VirtualMachine.h",
 			"MU",
 			"PRMOGMWJPH/moc_VirtualMachine.cpp",
@@ -250,9 +271,63 @@
 			null
 		],
 		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/AdvancedVMConfigDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_AdvancedVMConfigDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/DiskManagerDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_DiskManagerDialog.cpp",
+			null
+		],
+		[
 			"/home/usuario/Documentos/kvm-gui/src/ui/MainWindow.h",
 			"MU",
 			"YPKJ5OE7LN/moc_MainWindow.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/MediaManagerDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_MediaManagerDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/NetworkManagerDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_NetworkManagerDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/NewVMDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_NewVMDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/PreferencesDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_PreferencesDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/SnapshotManagerDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_SnapshotManagerDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/VMConfigDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_VMConfigDialog.cpp",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/VMCreationWizard.h",
+			"MU",
+			"YPKJ5OE7LN/moc_VMCreationWizard.cpp",
 			null
 		],
 		[
@@ -271,7 +346,14 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/usuario/Documentos/kvm-gui/build/KVMManager_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -290,6 +372,7 @@
 		"/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
 		"/usr/include/x86_64-linux-gnu/qt6/QtWidgets",
 		"/usr/include/x86_64-linux-gnu/qt6/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt6/QtXml",
 		"/usr/include",
 		"/usr/include/c++/14",
 		"/usr/include/x86_64-linux-gnu/c++/14",
@@ -337,6 +420,16 @@
 			null
 		],
 		[
+			"/home/usuario/Documentos/kvm-gui/src/core/QemuManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/core/VMXmlManager.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/usuario/Documentos/kvm-gui/src/core/VirtualMachine.cpp",
 			"MU",
 			null
@@ -347,7 +440,48 @@
 			"MU",
 			null
 		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/AdvancedVMConfigDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/DiskManagerDialog.cpp",
+			"MU",
+			null
+		],
 		[ "/home/usuario/Documentos/kvm-gui/src/ui/MainWindow.cpp", "MU", null ],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/MediaManagerDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/NetworkManagerDialog.cpp",
+			"MU",
+			null
+		],
+		[ "/home/usuario/Documentos/kvm-gui/src/ui/NewVMDialog.cpp", "MU", null ],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/PreferencesDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/SnapshotManagerDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/VMConfigDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/usuario/Documentos/kvm-gui/src/ui/VMCreationWizard.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/usuario/Documentos/kvm-gui/src/ui/VMDetailsWidget.cpp",
 			"MU",

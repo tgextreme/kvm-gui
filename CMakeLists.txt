@@ -14,6 +14,7 @@ find_package(Qt6 REQUIRED COMPONENTS
     Core
     Widgets
     Gui
+    Xml
 )
 
 # Set Qt6 policies
@@ -40,8 +41,19 @@ set(SOURCES
     src/ui/MainWindow.cpp
     src/ui/VMListWidget.cpp
     src/ui/VMDetailsWidget.cpp
+    src/ui/PreferencesDialog.cpp
+    src/ui/VMConfigDialog.cpp
+    src/ui/NewVMDialog.cpp
+    src/ui/VMCreationWizard.cpp
+    src/ui/DiskManagerDialog.cpp
+    src/ui/MediaManagerDialog.cpp
+    src/ui/NetworkManagerDialog.cpp
+    src/ui/SnapshotManagerDialog.cpp
+    src/ui/AdvancedVMConfigDialog.cpp
     src/core/KVMManager.cpp
     src/core/VirtualMachine.cpp
+    src/core/VMXmlManager.cpp
+    src/core/QemuManager.cpp
     src/models/VMListModel.cpp
 )
 
@@ -50,8 +62,19 @@ set(HEADERS
     src/ui/MainWindow.h
     src/ui/VMListWidget.h
     src/ui/VMDetailsWidget.h
+    src/ui/PreferencesDialog.h
+    src/ui/VMConfigDialog.h
+    src/ui/NewVMDialog.h
+    src/ui/VMCreationWizard.h
+    src/ui/DiskManagerDialog.h
+    src/ui/MediaManagerDialog.h
+    src/ui/NetworkManagerDialog.h
+    src/ui/SnapshotManagerDialog.h
+    src/ui/AdvancedVMConfigDialog.h
     src/core/KVMManager.h
     src/core/VirtualMachine.h
+    src/core/VMXmlManager.h
+    src/core/QemuManager.h
     src/models/VMListModel.h
 )
 
@@ -73,13 +96,12 @@ add_executable(KVMManager
 )
 
 # Link Qt6 libraries
-target_link_libraries(KVMManager
+target_link_libraries(KVMManager 
     Qt6::Core
     Qt6::Widgets
     Qt6::Gui
-)
-
-# Set additional compiler flags
+    Qt6::Xml
+)# Set additional compiler flags
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     target_compile_options(KVMManager PRIVATE -Wall -Wextra -pedantic)
 endif()

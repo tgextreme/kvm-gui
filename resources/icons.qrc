@@ -1,6 +1,18 @@
 <RCC>
     <qresource prefix="/icons">
-        <!-- This file contains placeholder entries for icons that should be -->
-        <!-- replaced with actual icon files for a production application -->
+        <!-- VM Creation Wizard Icons -->
+        <!-- Note: These are placeholder paths. In production, replace with actual icon files -->
+        <!-- <file>new-vm.png</file> -->
+        <!-- <file>vm-wizard-watermark.png</file> -->
+        <!-- <file>os-linux.png</file> -->
+        <!-- <file>os-windows.png</file> -->
+        <!-- <file>os-macos.png</file> -->
+        <!-- <file>os-other.png</file> -->
+        
+        <!-- Main Application Icons -->
+        <!-- <file>vm-start.png</file> -->
+        <!-- <file>vm-stop.png</file> -->
+        <!-- <file>vm-pause.png</file> -->
+        <!-- <file>vm-settings.png</file> -->
     </qresource>
 </RCC>

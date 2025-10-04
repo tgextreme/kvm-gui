@@ -1,7 +1,16 @@
 #include "MainWindow.h"
 #include "VMListWidget.h"
 #include "VMDetailsWidget.h"
+#include "PreferencesDialog.h"
+#include "VMConfigDialog.h"
+#include "AdvancedVMConfigDialog.h"
+#include "VMCreationWizard.h"
+#include "DiskManagerDialog.h"
+#include "MediaManagerDialog.h"
+#include "NetworkManagerDialog.h"
+#include "SnapshotManagerDialog.h"
 #include "../core/KVMManager.h"
+#include "../core/VirtualMachine.h"
 
 #include <QApplication>
 #include <QMessageBox>
@@ -14,6 +23,9 @@
 #include <QAction>
 #include <QLabel>
 #include <QIcon>
+#include <QFileDialog>
+#include <QInputDialog>
+#include <QStandardPaths>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -92,6 +104,35 @@ void MainWindow::createActions()
     m_stopVMAction->setStatusTip(tr("Detener la máquina virtual en ejecución"));
     connect(m_stopVMAction, &QAction::triggered, this, &MainWindow::stopVM);
 
+    // New manager actions
+    m_diskManagerAction = new QAction(QIcon(":/icons/disk-manager.png"), tr("Administrador de &discos virtuales..."), this);
+    m_diskManagerAction->setStatusTip(tr("Administrar discos duros virtuales - crear, copiar, modificar y eliminar"));
+    connect(m_diskManagerAction, &QAction::triggered, this, &MainWindow::showDiskManager);
+
+    m_mediaManagerAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_DriveHDIcon), tr("Administrador de &medios virtuales..."), this);
+    m_mediaManagerAction->setStatusTip(tr("Administrar discos duros virtuales, CD/DVD e imágenes de disquete"));
+    connect(m_mediaManagerAction, &QAction::triggered, this, &MainWindow::showMediaManager);
+
+    m_networkManagerAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_ComputerIcon), tr("Administrador de &red..."), this);
+    m_networkManagerAction->setStatusTip(tr("Administrar redes NAT y adaptadores solo anfitrión"));
+    connect(m_networkManagerAction, &QAction::triggered, this, &MainWindow::showNetworkManager);
+
+    m_snapshotManagerAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_FileIcon), tr("&Instantáneas..."), this);
+    m_snapshotManagerAction->setStatusTip(tr("Administrar instantáneas de la máquina virtual"));
+    connect(m_snapshotManagerAction, &QAction::triggered, this, &MainWindow::showSnapshotManager);
+
+    m_importVMAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_ArrowDown), tr("&Importar servicio virtualizado..."), this);
+    m_importVMAction->setStatusTip(tr("Importar una máquina virtual desde un archivo OVA/OVF"));
+    connect(m_importVMAction, &QAction::triggered, this, &MainWindow::importVM);
+
+    m_exportVMAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_ArrowUp), tr("&Exportar servicio virtualizado..."), this);
+    m_exportVMAction->setStatusTip(tr("Exportar la máquina virtual a un archivo OVA/OVF"));
+    connect(m_exportVMAction, &QAction::triggered, this, &MainWindow::exportVM);
+
+    m_cloneVMAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_DialogSaveButton), tr("&Clonar..."), this);
+    m_cloneVMAction->setStatusTip(tr("Crear una copia de la máquina virtual"));
+    connect(m_cloneVMAction, &QAction::triggered, this, &MainWindow::cloneVM);
+
     // Help menu actions
     m_aboutAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation), tr("&Acerca de KVM Manager"), this);
     m_aboutAction->setStatusTip(tr("Mostrar información sobre la aplicación"));
@@ -109,6 +150,13 @@ void MainWindow::setupMenuBar()
     m_fileMenu->addAction(m_newVMAction);
     m_fileMenu->addAction(m_addVMAction);
     m_fileMenu->addSeparator();
+    m_fileMenu->addAction(m_importVMAction);
+    m_fileMenu->addAction(m_exportVMAction);
+    m_fileMenu->addSeparator();
+    m_fileMenu->addAction(m_diskManagerAction);
+    m_fileMenu->addAction(m_mediaManagerAction);
+    m_fileMenu->addAction(m_networkManagerAction);
+    m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_preferencesAction);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_exitAction);
@@ -116,11 +164,14 @@ void MainWindow::setupMenuBar()
     // Machine menu
     m_machineMenu = menuBar()->addMenu(tr("&Máquina"));
     m_machineMenu->addAction(m_removeVMAction);
+    m_machineMenu->addAction(m_cloneVMAction);
     m_machineMenu->addAction(m_configureVMAction);
     m_machineMenu->addSeparator();
     m_machineMenu->addAction(m_startVMAction);
     m_machineMenu->addAction(m_pauseVMAction);
     m_machineMenu->addAction(m_stopVMAction);
+    m_machineMenu->addSeparator();
+    m_machineMenu->addAction(m_snapshotManagerAction);
 
     // View menu
     m_viewMenu = menuBar()->addMenu(tr("&Ver"));
@@ -152,7 +203,7 @@ void MainWindow::setupCentralWidget()
     m_centralSplitter = new QSplitter(Qt::Horizontal, this);
     
     // Create VM list widget (left panel)
-    m_vmListWidget = new VMListWidget(this);
+    m_vmListWidget = new VMListWidget(m_kvmManager, this);
     m_vmListWidget->setMinimumWidth(300);
     m_vmListWidget->setMaximumWidth(400);
     
@@ -173,6 +224,16 @@ void MainWindow::setupCentralWidget()
             this, &MainWindow::onVMSelectionChanged);
     connect(m_vmListWidget, &VMListWidget::vmSelectionChanged,
             m_vmDetailsWidget, &VMDetailsWidget::setSelectedVM);
+    
+    // Connect KVMManager signals to refresh VM list
+    connect(m_kvmManager, &KVMManager::vmListChanged,
+            m_vmListWidget, &VMListWidget::refreshVMList);
+    
+    // Connect error signals
+    connect(m_kvmManager, &KVMManager::errorOccurred,
+            this, [this](const QString &error) {
+                QMessageBox::critical(this, tr("Error KVM"), error);
+            });
 }
 
 void MainWindow::setupStatusBar()
@@ -184,9 +245,12 @@ void MainWindow::setupStatusBar()
 
 void MainWindow::newVM()
 {
-    // TODO: Implement new VM creation dialog
-    QMessageBox::information(this, tr("Nueva VM"), 
-                           tr("Funcionalidad de creación de nueva máquina virtual será implementada próximamente."));
+    VMCreationWizard wizard(m_kvmManager, this);
+    if (wizard.exec() == QDialog::Accepted) {
+        // El wizard ya ha creado la VM, solo necesitamos actualizar la UI
+        m_vmListWidget->refreshVMList();
+        m_statusLabel->setText(tr("Nueva máquina virtual creada correctamente"));
+    }
 }
 
 void MainWindow::addVM()
@@ -225,9 +289,14 @@ void MainWindow::configureVM()
         return;
     }
     
-    // TODO: Implement VM configuration dialog
-    QMessageBox::information(this, tr("Configurar VM"), 
-                           tr("Funcionalidad de configuración será implementada próximamente."));
+    VirtualMachine *vm = m_kvmManager->getVirtualMachine(selectedVM);
+    if (vm) {
+        AdvancedVMConfigDialog dialog(vm, m_kvmManager, this);
+        if (dialog.exec() == QDialog::Accepted) {
+            // Refresh VM list and details after configuration changes
+            m_vmListWidget->refreshVMList();
+        }
+    }
 }
 
 void MainWindow::startVM()
@@ -239,9 +308,15 @@ void MainWindow::startVM()
         return;
     }
     
-    // TODO: Implement VM start
-    QMessageBox::information(this, tr("Iniciar VM"), 
-                           tr("Iniciando máquina virtual '%1'...").arg(selectedVM));
+    // Intentar iniciar la VM usando KVMManager
+    if (m_kvmManager->startVM(selectedVM)) {
+        m_statusLabel->setText(tr("Máquina virtual '%1' iniciada correctamente").arg(selectedVM));
+        // Actualizar estado de botones
+        updateUIState();
+    } else {
+        // El error ya se mostrará via señal errorOccurred
+        m_statusLabel->setText(tr("Error al iniciar la máquina virtual"));
+    }
 }
 
 void MainWindow::pauseVM()
@@ -260,9 +335,8 @@ void MainWindow::stopVM()
 
 void MainWindow::showPreferences()
 {
-    // TODO: Implement preferences dialog
-    QMessageBox::information(this, tr("Preferencias"), 
-                           tr("Ventana de preferencias será implementada próximamente."));
+    PreferencesDialog dialog(m_kvmManager, this);
+    dialog.exec();
 }
 
 void MainWindow::showAbout()
@@ -301,4 +375,95 @@ void MainWindow::updateUIState()
     m_startVMAction->setEnabled(hasSelection);
     m_pauseVMAction->setEnabled(false); // TODO: Enable when VM is running
     m_stopVMAction->setEnabled(false);  // TODO: Enable when VM is running
+    m_cloneVMAction->setEnabled(hasSelection);
+    m_exportVMAction->setEnabled(hasSelection);
+    m_snapshotManagerAction->setEnabled(hasSelection);
+}
+
+// New manager implementations
+void MainWindow::showDiskManager()
+{
+    DiskManagerDialog dialog(m_kvmManager, this);
+    dialog.exec();
+}
+
+void MainWindow::showMediaManager()
+{
+    MediaManagerDialog dialog(m_kvmManager, this);
+    dialog.exec();
+}
+
+void MainWindow::showNetworkManager()
+{
+    NetworkManagerDialog dialog(m_kvmManager, this);
+    dialog.exec();
+}
+
+void MainWindow::showSnapshotManager()
+{
+    QString selectedVM = m_vmListWidget->getSelectedVM();
+    if (selectedVM.isEmpty()) {
+        QMessageBox::warning(this, tr("Sin selección"), 
+            tr("Debe seleccionar una máquina virtual para administrar sus instantáneas."));
+        return;
+    }
+    
+    VirtualMachine *vm = m_kvmManager->getVirtualMachine(selectedVM);
+    if (vm) {
+        SnapshotManagerDialog dialog(vm, this);
+        dialog.exec();
+    }
+}
+
+void MainWindow::importVM()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,
+        tr("Importar servicio virtualizado"),
+        QStandardPaths::writableLocation(QStandardPaths::HomeLocation),
+        tr("Archivos OVA/OVF (*.ova *.ovf);;Todos los archivos (*.*)"));
+    
+    if (!fileName.isEmpty()) {
+        QMessageBox::information(this, tr("Importar VM"), 
+            tr("Función en desarrollo: Importar desde %1").arg(fileName));
+    }
+}
+
+void MainWindow::exportVM()
+{
+    QString selectedVM = m_vmListWidget->getSelectedVM();
+    if (selectedVM.isEmpty()) {
+        QMessageBox::warning(this, tr("Sin selección"), 
+            tr("Debe seleccionar una máquina virtual para exportar."));
+        return;
+    }
+    
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("Exportar servicio virtualizado"),
+        QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/" + selectedVM + ".ova",
+        tr("Archivos OVA (*.ova);;Archivos OVF (*.ovf)"));
+    
+    if (!fileName.isEmpty()) {
+        QMessageBox::information(this, tr("Exportar VM"), 
+            tr("Función en desarrollo: Exportar '%1' a %2").arg(selectedVM).arg(fileName));
+    }
+}
+
+void MainWindow::cloneVM()
+{
+    QString selectedVM = m_vmListWidget->getSelectedVM();
+    if (selectedVM.isEmpty()) {
+        QMessageBox::warning(this, tr("Sin selección"), 
+            tr("Debe seleccionar una máquina virtual para clonar."));
+        return;
+    }
+    
+    bool ok;
+    QString cloneName = QInputDialog::getText(this, tr("Clonar máquina virtual"),
+        tr("Nombre del clon:"), QLineEdit::Normal, 
+        selectedVM + " - Clon", &ok);
+    
+    if (ok && !cloneName.isEmpty()) {
+        QMessageBox::information(this, tr("Clonar VM"), 
+            tr("Función en desarrollo: Crear clon '%1' de '%2'").arg(cloneName).arg(selectedVM));
+    }
 }
