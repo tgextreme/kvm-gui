@@ -1,0 +1,9 @@
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/KVMManager.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/edit_cache.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/rebuild_cache.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/list_install_components.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/install.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/install/local.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/install/strip.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/KVMManager_autogen_timestamp_deps.dir
+/home/usuario/Documentos/kvm-gui/build/CMakeFiles/KVMManager_autogen.dir

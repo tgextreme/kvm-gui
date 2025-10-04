@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+462fc0cdde061875a362c00b0d24c240 CMakeFiles/KVMManager_autogen
+aa3a5442535decf79b8050b827227fd5 KVMManager_autogen/3YJK5W5UP7/qrc_icons.cpp
+e784f92c4e226b51fec0e37e89d3ada7 KVMManager_autogen/timestamp

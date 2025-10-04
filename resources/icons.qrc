@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <!-- This file contains placeholder entries for icons that should be -->
+        <!-- replaced with actual icon files for a production application -->
+    </qresource>
+</RCC>
