@@ -330,8 +330,17 @@ void QemuManager::onProcessFinished(int exitCode, QProcess::ExitStatus exitStatu
         m_runningVMs.remove(vmName);
         emit processFinished(vmName, exitCode);
         
-        if (exitStatus == QProcess::CrashExit) {
-            emit errorOccurred(tr("La máquina virtual '%1' se cerró inesperadamente").arg(vmName));
+        if (exitStatus == QProcess::CrashExit || exitCode != 0) {
+            QString errorMsg = tr("La máquina virtual '%1' terminó con código de error %2").arg(vmName).arg(exitCode);
+            
+            // Add stderr output for debugging
+            QString stderr = process->readAllStandardError();
+            if (!stderr.isEmpty()) {
+                errorMsg += "\nDetalles: " + stderr;
+                qDebug() << "QEMU stderr:" << stderr;
+            }
+            
+            emit errorOccurred(errorMsg);
         }
     }
     
@@ -357,6 +366,15 @@ void QemuManager::onProcessError(QProcess::ProcessError error)
             errorString = tr("Error desconocido en QEMU");
     }
     
+    // Add stderr output for better debugging
+    if (process) {
+        QString stderr = process->readAllStandardError();
+        if (!stderr.isEmpty()) {
+            errorString += "\nDetalles: " + stderr;
+        }
+    }
+    
+    qDebug() << "Error en QemuManager:" << errorString;
     emit errorOccurred(errorString);
 }
 
@@ -383,10 +401,16 @@ QStringList QemuManager::buildQemuCommand(VirtualMachine *vm)
 {
     QStringList args;
     
-    // Configuración básica
-    args << "-machine" << "pc-i440fx-2.12,accel=kvm";
-    args << "-cpu" << "host";
-    args << "-smp" << "2"; // 2 CPUs por defecto
+    // Configuración básica - Try KVM first, fallback to TCG
+    args << "-machine" << "pc-i440fx-2.12,accel=kvm:tcg";
+    args << "-cpu" << "qemu64";
+    
+    // CPUs dinámicos
+    int cpuCount = vm->getCPUCount();
+    if (cpuCount < 1) cpuCount = 1;
+    args << "-smp" << QString::number(cpuCount);
+    
+    // Memoria
     args << "-m" << QString::number(vm->getMemoryMB());
     
     // Display
@@ -394,15 +418,48 @@ QStringList QemuManager::buildQemuCommand(VirtualMachine *vm)
     args << "-display" << "gtk,show-cursor=on";
     
     // Audio
-    args << "-audiodev" << "pulse,id=audio0";
+    args << "-audiodev" << "pa,id=audio0";
     args << "-device" << "AC97,audiodev=audio0";
     
-    // Configurar disco duro si existe
-    QString vmDir = QDir::homePath() + "/.VM/" + vm->getName();
-    QString diskPath = vmDir + "/" + vm->getName() + ".qcow2";
+    // Configurar discos duros
+    QStringList hardDisks = vm->getHardDisks();
+    for (int i = 0; i < hardDisks.size(); ++i) {
+        const QString &diskPath = hardDisks[i];
+        if (QFileInfo::exists(diskPath)) {
+            args << "-drive" << QString("file=%1,format=qcow2,if=ide,index=%2,media=disk").arg(diskPath).arg(i);
+        }
+    }
     
-    if (QFileInfo::exists(diskPath)) {
-        args << "-drive" << QString("file=%1,format=qcow2,if=ide,index=0,media=disk").arg(diskPath);
+    // Configurar CDROM/ISO
+    QString cdromImage = vm->getCDROMImage();
+    if (!cdromImage.isEmpty() && QFileInfo::exists(cdromImage)) {
+        args << "-drive" << QString("file=%1,if=ide,index=2,media=cdrom,readonly=on").arg(cdromImage);
+    } else {
+        // Añadir unidad CDROM vacía
+        args << "-drive" << "if=ide,index=2,media=cdrom,readonly=on";
+    }
+    
+    // Orden de arranque
+    QStringList bootOrder = vm->getBootOrder();
+    if (!bootOrder.isEmpty()) {
+        QString bootString;
+        for (const QString &device : bootOrder) {
+            if (device == "Disco Duro") {
+                bootString += "c";  // hard disk
+            } else if (device == "CD/DVD") {
+                bootString += "d";  // cdrom
+            } else if (device == "Red") {
+                bootString += "n";  // network
+            } else if (device == "Disquete") {
+                bootString += "a";  // floppy
+            }
+        }
+        if (!bootString.isEmpty()) {
+            args << "-boot" << QString("order=%1").arg(bootString);
+        }
+    } else {
+        // Orden por defecto: disco duro, luego CD
+        args << "-boot" << "order=cd";
     }
     
     // Red (NAT por defecto)
@@ -419,6 +476,8 @@ QStringList QemuManager::buildQemuCommand(VirtualMachine *vm)
     if (!vm->getUUID().isEmpty()) {
         args << "-uuid" << vm->getUUID();
     }
+    
+    qDebug() << "Comando QEMU construido para" << vm->getName() << ":" << args.join(" ");
     
     return args;
 }

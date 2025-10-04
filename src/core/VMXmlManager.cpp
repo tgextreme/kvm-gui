@@ -115,22 +115,28 @@ VirtualMachine* VMXmlManager::loadVM(const QString &vmName)
     
     QDomDocument doc;
     
-    QDomDocument::ParseResult result = doc.setContent(&file);
+    QString content = file.readAll();
+    file.close();
+    
+    qDebug() << "VMXmlManager: Contenido XML leído para" << vmName << ":" << content.left(200) << "...";
+    
+    QDomDocument::ParseResult result = doc.setContent(content);
     if (!result) {
         QString error = tr("Error XML en %1 (línea %2, columna %3): %4")
                        .arg(filePath).arg(result.errorLine).arg(result.errorColumn).arg(result.errorMessage);
         emit errorOccurred(error);
-        file.close();
+        qDebug() << "VMXmlManager: Error en parseo XML:" << error;
         return nullptr;
     }
     
-    file.close();
-    
     VirtualMachine *vm = new VirtualMachine(vmName, this);
+    
+    qDebug() << "VMXmlManager: Iniciando parseo para VM:" << vmName;
     if (parseVMDocument(doc, vm)) {
-        qDebug() << "VM cargada:" << vmName << "desde" << filePath;
+        qDebug() << "VMXmlManager: VM cargada exitosamente:" << vmName << "desde" << filePath;
         return vm;
     } else {
+        qDebug() << "VMXmlManager: Error en parseVMDocument para VM:" << vmName;
         delete vm;
         return nullptr;
     }
@@ -164,16 +170,19 @@ QStringList VMXmlManager::getAvailableVMs()
     QStringList vmList;
     
     if (!isVMFolderValid()) {
+        qDebug() << "VMXmlManager: Carpeta VM no válida:" << m_vmFolderPath;
         return vmList;
     }
     
     QDir dir(m_vmFolderPath);
     QStringList xmlFiles = dir.entryList(QStringList("*.xml"), QDir::Files);
+    qDebug() << "VMXmlManager: Archivos XML encontrados:" << xmlFiles;
     
     for (const QString &fileName : xmlFiles) {
         QFileInfo fileInfo(fileName);
         QString vmName = fileInfo.baseName().replace("_", " "); // Deshacer sanitización básica
         vmList.append(vmName);
+        qDebug() << "VMXmlManager: VM detectada:" << vmName << "desde archivo:" << fileName;
     }
     
     return vmList;
@@ -239,8 +248,8 @@ QDomDocument VMXmlManager::createVMDocument(VirtualMachine *vm)
     
     QDomElement root = doc.createElement("VirtualMachine");
     root.setAttribute("version", "1.0");
-    root.setAttribute("created", QDateTime::currentDateTime().toString(Qt::ISODate));
-    root.setAttribute("modified", QDateTime::currentDateTime().toString(Qt::ISODate));
+    root.setAttribute("created", QDateTime::currentDateTime().toString("yyyy-MM-dd_hh-mm-ss"));
+    root.setAttribute("modified", QDateTime::currentDateTime().toString("yyyy-MM-dd_hh-mm-ss"));
     doc.appendChild(root);
     
     addBasicInfoElement(doc, root, vm);
@@ -350,7 +359,7 @@ void VMXmlManager::addDisplayElement(QDomDocument &doc, QDomElement &root, Virtu
     monitors.setAttribute("count", vm->getMonitorCount());
     display.appendChild(monitors);
     
-    QDomElement acceleration3D = doc.createElement("3DAcceleration");
+    QDomElement acceleration3D = doc.createElement("Acceleration3D");
     acceleration3D.setAttribute("enabled", vm->is3DAcceleration() ? "true" : "false");
     display.appendChild(acceleration3D);
     
@@ -387,7 +396,11 @@ void VMXmlManager::addSharedFoldersElement(QDomDocument &doc, QDomElement &root,
 
 bool VMXmlManager::parseVMDocument(const QDomDocument &doc, VirtualMachine *vm)
 {
+    qDebug() << "VMXmlManager: parseVMDocument iniciado";
+    
     QDomElement root = doc.documentElement();
+    qDebug() << "VMXmlManager: Elemento raíz:" << root.tagName();
+    
     if (root.tagName() != "VirtualMachine") {
         emit errorOccurred(tr("Documento XML no válido: elemento raíz incorrecto"));
         return false;
@@ -509,7 +522,7 @@ void VMXmlManager::parseDisplayInfo(const QDomElement &element, VirtualMachine *
         vm->setMonitorCount(monitors.attribute("count").toInt());
     }
     
-    QDomElement acceleration3D = element.firstChildElement("3DAcceleration");
+    QDomElement acceleration3D = element.firstChildElement("Acceleration3D");
     if (!acceleration3D.isNull()) {
         vm->set3DAcceleration(acceleration3D.attribute("enabled") == "true");
     }

@@ -216,6 +216,10 @@ public:
     QString getISOPath() const;
     bool isConnected() const;
     
+    // Methods to configure dialog with existing values
+    void setISOPath(const QString &path);
+    void setConnected(bool connected);
+    
 private slots:
     void onBrowseISO();
     void onEmptyToggled(bool checked);

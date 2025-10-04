@@ -211,18 +211,33 @@ void AdvancedVMConfigDialog::setupStorageTab()
     m_removeStorageButton = new QPushButton("Eliminar");
     m_modifyStorageButton = new QPushButton("Propiedades");
     
+    auto *selectISOButton = new QPushButton("Cargar ISO");
+    
     m_addHardDiskButton->setIcon(QIcon(":/icons/hdd.png"));
     m_addOpticalButton->setIcon(QIcon(":/icons/cd.png"));
     m_removeStorageButton->setIcon(QIcon(":/icons/remove.png"));
     m_modifyStorageButton->setIcon(QIcon(":/icons/properties.png"));
+    selectISOButton->setIcon(QIcon(":/icons/cd.png"));
     
     connect(m_addHardDiskButton, &QPushButton::clicked, this, &AdvancedVMConfigDialog::addHardDisk);
     connect(m_addOpticalButton, &QPushButton::clicked, this, &AdvancedVMConfigDialog::addOpticalDrive);
-    connect(m_removeStorageButton, &QPushButton::clicked, this, &AdvancedVMConfigDialog::removeHardDisk);
+    connect(m_removeStorageButton, &QPushButton::clicked, [this]() {
+        auto *currentItem = m_storageTree->currentItem();
+        if (!currentItem) return;
+        
+        QString deviceType = currentItem->text(1);
+        if (deviceType == "Unidad Óptica") {
+            removeOpticalDrive();
+        } else {
+            removeHardDisk();
+        }
+    });
     connect(m_modifyStorageButton, &QPushButton::clicked, this, &AdvancedVMConfigDialog::modifyHardDisk);
+    connect(selectISOButton, &QPushButton::clicked, this, &AdvancedVMConfigDialog::selectISO);
     
     toolbarLayout->addWidget(m_addHardDiskButton);
     toolbarLayout->addWidget(m_addOpticalButton);
+    toolbarLayout->addWidget(selectISOButton);
     toolbarLayout->addSpacing(10);
     toolbarLayout->addWidget(m_removeStorageButton);
     toolbarLayout->addWidget(m_modifyStorageButton);
@@ -395,6 +410,13 @@ void AdvancedVMConfigDialog::loadVMSettings()
     m_memorySlider->setValue(m_vm->getMemoryMB());
     m_cpuCountSpin->setValue(m_vm->getCPUCount());
     
+    // Boot Order
+    QStringList bootOrder = m_vm->getBootOrder();
+    if (!bootOrder.isEmpty()) {
+        m_bootOrderList->clear();
+        m_bootOrderList->addItems(bootOrder);
+    }
+    
     // Load additional settings from XML or use defaults
     updateMemoryInfo();
     updateStorageList();
@@ -413,6 +435,13 @@ void AdvancedVMConfigDialog::saveVMSettings()
     // System
     m_vm->setMemoryMB(m_memorySpin->value());
     m_vm->setCPUCount(m_cpuCountSpin->value());
+    
+    // Boot Order - Get current order from list
+    QStringList bootOrder;
+    for (int i = 0; i < m_bootOrderList->count(); ++i) {
+        bootOrder.append(m_bootOrderList->item(i)->text());
+    }
+    m_vm->setBootOrder(bootOrder);
     
     // Save VM configuration
     if (m_kvmManager) {
@@ -552,22 +581,91 @@ void AdvancedVMConfigDialog::modifyHardDisk()
         return;
     }
     
-    // Show properties dialog for selected device
-    QMessageBox::information(this, "Información",
-                           "Funcionalidad de propiedades en desarrollo.");
+    QString deviceType = currentItem->text(1);
+    
+    if (deviceType == "Unidad Óptica") {
+        // Show optical drive properties dialog
+        AddOpticalDriveDialog dialog(this);
+        dialog.setWindowTitle("Propiedades de Unidad Óptica");
+        
+        // Pre-fill current ISO if exists
+        QString currentISO = m_vm->getCDROMImage();
+        dialog.setISOPath(currentISO);
+        dialog.setConnected(true); // Always connected for now
+        
+        if (dialog.exec() == QDialog::Accepted) {
+            QString isoPath = dialog.getISOPath();
+            m_vm->setCDROMImage(isoPath);
+            updateStorageList();
+            
+            if (!isoPath.isEmpty()) {
+                QMessageBox::information(this, "ISO Cambiado",
+                                       QString("Nueva imagen ISO: %1").arg(isoPath));
+            } else {
+                QMessageBox::information(this, "Unidad Vacía",
+                                       "La unidad óptica ahora está vacía.");
+            }
+        }
+    } else {
+        // Hard disk properties - to be implemented
+        QMessageBox::information(this, "Información",
+                               "Propiedades de disco duro en desarrollo.");
+    }
 }
 
 void AdvancedVMConfigDialog::addOpticalDrive()
 {
     AddOpticalDriveDialog dialog(this);
     if (dialog.exec() == QDialog::Accepted) {
+        QString isoPath = dialog.getISOPath();
+        
+        if (!isoPath.isEmpty() && m_vm) {
+            // Set the CDROM image in the VM
+            m_vm->setCDROMImage(isoPath);
+            
+            QMessageBox::information(this, "Unidad Óptica Añadida",
+                                   QString("Unidad óptica añadida con imagen: %1").arg(isoPath));
+        } else if (m_vm) {
+            // Empty optical drive
+            m_vm->setCDROMImage("");
+            
+            QMessageBox::information(this, "Unidad Óptica Añadida",
+                                   "Unidad óptica vacía añadida correctamente.");
+        }
+        
         updateStorageList();
     }
 }
 
 void AdvancedVMConfigDialog::removeOpticalDrive()
 {
-    removeHardDisk(); // Same logic
+    auto *currentItem = m_storageTree->currentItem();
+    if (!currentItem) {
+        QMessageBox::information(this, "Información",
+                               "Seleccione un dispositivo para eliminar.");
+        return;
+    }
+    
+    // Check if it's an optical drive
+    QString deviceType = currentItem->text(1);
+    if (deviceType != "Unidad Óptica") {
+        QMessageBox::information(this, "Información",
+                               "Seleccione una unidad óptica para eliminar.");
+        return;
+    }
+    
+    int ret = QMessageBox::question(this, "Confirmar Eliminación",
+                                   "¿Está seguro de que desea eliminar esta unidad óptica?",
+                                   QMessageBox::Yes | QMessageBox::No);
+    
+    if (ret == QMessageBox::Yes && m_vm) {
+        // Remove CDROM image from VM
+        m_vm->setCDROMImage("");
+        updateStorageList();
+        
+        QMessageBox::information(this, "Información",
+                               "Unidad óptica eliminada correctamente.");
+    }
 }
 
 void AdvancedVMConfigDialog::selectISO()
@@ -577,9 +675,13 @@ void AdvancedVMConfigDialog::selectISO()
         QStandardPaths::writableLocation(QStandardPaths::HomeLocation),
         "Archivos ISO (*.iso);;Todos los archivos (*)");
     
-    if (!isoPath.isEmpty()) {
-        // Add ISO to current optical drive
+    if (!isoPath.isEmpty() && m_vm) {
+        // Set the ISO in the optical drive
+        m_vm->setCDROMImage(isoPath);
         updateStorageList();
+        
+        QMessageBox::information(this, "ISO Cargado",
+                               QString("Archivo ISO cargado: %1").arg(isoPath));
     }
 }
 
@@ -742,6 +844,22 @@ void AdvancedVMConfigDialog::updateStorageList()
         item->setText(3, diskPath);
         item->setIcon(0, QIcon(":/icons/hdd.png"));
     }
+    
+    // Add CDROM/Optical drive
+    QString cdromImage = m_vm->getCDROMImage();
+    auto *cdromItem = new QTreeWidgetItem(m_storageTree);
+    if (!cdromImage.isEmpty()) {
+        cdromItem->setText(0, QFileInfo(cdromImage).baseName());
+        cdromItem->setText(1, "Unidad Óptica");
+        cdromItem->setText(2, "ISO");
+        cdromItem->setText(3, cdromImage);
+    } else {
+        cdromItem->setText(0, "Unidad CD/DVD");
+        cdromItem->setText(1, "Unidad Óptica");
+        cdromItem->setText(2, "Vacía");
+        cdromItem->setText(3, "");
+    }
+    cdromItem->setIcon(0, QIcon(":/icons/cd.png"));
     
     // Expand all items
     m_storageTree->expandAll();
@@ -1050,6 +1168,23 @@ QString AddOpticalDriveDialog::getISOPath() const
 bool AddOpticalDriveDialog::isConnected() const
 {
     return m_connectedCheck->isChecked();
+}
+
+void AddOpticalDriveDialog::setISOPath(const QString &path)
+{
+    if (path.isEmpty()) {
+        m_emptyRadio->setChecked(true);
+        m_isoGroup->setEnabled(false);
+    } else {
+        m_isoRadio->setChecked(true);
+        m_isoPathEdit->setText(path);
+        m_isoGroup->setEnabled(true);
+    }
+}
+
+void AddOpticalDriveDialog::setConnected(bool connected)
+{
+    m_connectedCheck->setChecked(connected);
 }
 
 void AddOpticalDriveDialog::onBrowseISO()

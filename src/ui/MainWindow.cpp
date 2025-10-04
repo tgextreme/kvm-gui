@@ -17,6 +17,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QSplitter>
+#include <QTimer>
 #include <QMenuBar>
 #include <QToolBar>
 #include <QStatusBar>
@@ -234,6 +235,12 @@ void MainWindow::setupCentralWidget()
             this, [this](const QString &error) {
                 QMessageBox::critical(this, tr("Error KVM"), error);
             });
+    
+    // Load existing VMs on startup
+    QTimer::singleShot(100, this, [this]() {
+        qDebug() << "MainWindow: Cargando VMs al inicio";
+        m_vmListWidget->refreshVMList();
+    });
 }
 
 void MainWindow::setupStatusBar()

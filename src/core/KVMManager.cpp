@@ -8,6 +8,7 @@
 #include <QStandardPaths>
 #include <QProcess>
 #include <QTimer>
+#include <QUuid>
 #include <QRegularExpression>
 
 KVMManager::KVMManager(QObject *parent)
@@ -48,8 +49,10 @@ KVMManager::KVMManager(QObject *parent)
         }
     });
     
+    // Always load VMs from XML files, regardless of libvirt status
+    loadVirtualMachines();
+    
     if (m_libvirtRunning) {
-        loadVirtualMachines();
         m_stateCheckTimer->start();
     }
 }
@@ -94,10 +97,15 @@ void KVMManager::loadVirtualMachines()
     
     // Load VMs from XML files
     QStringList vmNames = m_xmlManager->getAvailableVMs();
+    qDebug() << "KVMManager: Cargando VMs desde XML:" << vmNames;
+    
     for (const QString &vmName : vmNames) {
         VirtualMachine *vm = m_xmlManager->loadVM(vmName);
         if (vm) {
             m_virtualMachines.append(vm);
+            qDebug() << "KVMManager: VM cargada:" << vmName;
+        } else {
+            qDebug() << "KVMManager: Error cargando VM:" << vmName;
         }
     }
     
@@ -157,8 +165,7 @@ bool KVMManager::createVirtualMachine(const QString &name, const QString &osType
     vm->setState("shut off");
     
     // Generate UUID
-    QString uuid = QString("vm-%1-%2").arg(name.toLower().replace(" ", "-"))
-                                      .arg(QDateTime::currentMSecsSinceEpoch());
+    QString uuid = QUuid::createUuid().toString(QUuid::WithoutBraces);
     vm->setUUID(uuid);
     
     // Create VM directory and disk if needed

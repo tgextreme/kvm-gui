@@ -98,11 +98,13 @@ void VMListWidget::populateVMList()
     m_allVMs.clear();
     
     if (!m_kvmManager) {
+        qDebug() << "VMListWidget: KVMManager es null";
         return;
     }
     
     // Load VMs from XML files
     QStringList vmNames = m_kvmManager->getVirtualMachines();
+
     
     for (const QString &vmName : vmNames) {
         VirtualMachine *vm = m_kvmManager->getVirtualMachine(vmName);
