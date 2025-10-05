@@ -18,6 +18,7 @@
 #include <QHBoxLayout>
 #include <QSplitter>
 #include <QTimer>
+#include <QProgressDialog>
 #include <QMenuBar>
 #include <QToolBar>
 #include <QStatusBar>
@@ -482,10 +483,38 @@ void MainWindow::cloneVM()
     bool ok;
     QString cloneName = QInputDialog::getText(this, tr("Clonar máquina virtual"),
         tr("Nombre del clon:"), QLineEdit::Normal, 
-        selectedVM + " - Clon", &ok);
+        selectedVM + " - Clone", &ok);
     
     if (ok && !cloneName.isEmpty()) {
-        QMessageBox::information(this, tr("Clonar VM"), 
-            tr("Función en desarrollo: Crear clon '%1' de '%2'").arg(cloneName).arg(selectedVM));
+        // Mostrar diálogo de confirmación
+        QMessageBox::StandardButton reply = QMessageBox::question(this, 
+            tr("Confirmar clonado"), 
+            tr("¿Deseas clonar la VM '%1' como '%2'?\n\nEsto creará una copia completa del disco duro y la configuración.")
+            .arg(selectedVM).arg(cloneName),
+            QMessageBox::Yes | QMessageBox::No, 
+            QMessageBox::Yes);
+            
+        if (reply == QMessageBox::Yes) {
+            // Crear un progreso dialog para mostrar el progreso
+            QProgressDialog progress(tr("Clonando máquina virtual..."), tr("Cancelar"), 0, 0, this);
+            progress.setWindowModality(Qt::WindowModal);
+            progress.show();
+            
+            // Procesar eventos de la UI para mostrar el diálogo
+            QApplication::processEvents();
+            
+            // Realizar el clonado
+            if (m_kvmManager->cloneVirtualMachine(selectedVM, cloneName)) {
+                progress.hide();
+                QMessageBox::information(this, tr("Clonado exitoso"), 
+                    tr("La VM '%1' ha sido clonada exitosamente como '%2'").arg(selectedVM).arg(cloneName));
+                m_vmListWidget->refreshVMList();
+                m_statusLabel->setText(tr("VM clonada correctamente"));
+            } else {
+                progress.hide();
+                // El error ya se mostró a través del signal errorOccurred
+                m_statusLabel->setText(tr("Error al clonar VM"));
+            }
+        }
     }
 }

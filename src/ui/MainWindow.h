@@ -70,6 +70,7 @@ private:
     QAction *m_newVMAction;
     QAction *m_addVMAction;
     QAction *m_removeVMAction;
+    QAction *m_cloneVMAction;
     QAction *m_configureVMAction;
     QAction *m_startVMAction;
     QAction *m_pauseVMAction;
@@ -86,7 +87,6 @@ private:
     QAction *m_snapshotManagerAction;
     QAction *m_importVMAction;
     QAction *m_exportVMAction;
-    QAction *m_cloneVMAction;
     
     // Menus
     QMenu *m_fileMenu;

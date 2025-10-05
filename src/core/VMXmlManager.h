@@ -30,6 +30,7 @@ public:
     bool saveVM(VirtualMachine *vm);
     VirtualMachine* loadVM(const QString &vmName);
     bool deleteVM(const QString &vmName);
+    bool cloneVM(const QString &sourceName, const QString &cloneName);
     bool vmExists(const QString &vmName);
     
     // Lista de VMs disponibles

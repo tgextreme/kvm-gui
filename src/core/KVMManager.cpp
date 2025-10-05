@@ -251,6 +251,70 @@ bool KVMManager::deleteVirtualMachine(const QString &name)
     }
 }
 
+bool KVMManager::cloneVirtualMachine(const QString &sourceName, const QString &cloneName)
+{
+    // Verificar que la VM origen existe
+    VirtualMachine *sourceVM = getVirtualMachine(sourceName);
+    if (!sourceVM) {
+        emit errorOccurred(tr("La máquina virtual '%1' no existe").arg(sourceName));
+        return false;
+    }
+    
+    // Verificar que el nombre del clon no existe
+    if (getVirtualMachine(cloneName)) {
+        emit errorOccurred(tr("Ya existe una máquina virtual con el nombre '%1'").arg(cloneName));
+        return false;
+    }
+    
+    qDebug() << "KVMManager: Iniciando clonado de" << sourceName << "a" << cloneName;
+    
+    // Crear directorio para el clon
+    QString cloneDir = QDir::homePath() + "/.VM/" + cloneName;
+    QDir dir;
+    if (!dir.mkpath(cloneDir)) {
+        emit errorOccurred(tr("No se pudo crear el directorio para el clon: %1").arg(cloneDir));
+        return false;
+    }
+    
+    // Clonar los discos duros
+    QStringList sourceDisks = sourceVM->getHardDisks();
+    for (const QString &sourceDiskPath : sourceDisks) {
+        QFileInfo sourceInfo(sourceDiskPath);
+        QString cloneDiskPath = cloneDir + "/" + cloneName + "." + sourceInfo.suffix();
+        
+        qDebug() << "KVMManager: Clonando disco de" << sourceDiskPath << "a" << cloneDiskPath;
+        
+        if (!m_qemuManager->copyDisk(sourceDiskPath, cloneDiskPath)) {
+            emit errorOccurred(tr("Error al clonar el disco: %1 -> %2").arg(sourceDiskPath).arg(cloneDiskPath));
+            
+            // Limpiar archivos parciales en caso de error
+            QDir cleanupDir(cloneDir);
+            cleanupDir.removeRecursively();
+            return false;
+        }
+        
+        qDebug() << "KVMManager: Disco clonado exitosamente:" << cloneDiskPath;
+    }
+    
+    // Clonar la configuración XML
+    if (!m_xmlManager->cloneVM(sourceName, cloneName)) {
+        emit errorOccurred(tr("Error al clonar la configuración XML"));
+        
+        // Limpiar archivos en caso de error
+        QDir cleanupDir(cloneDir);
+        cleanupDir.removeRecursively();
+        return false;
+    }
+    
+    // Recargar las VMs para incluir el clon
+    loadVirtualMachines();
+    
+    emit vmCreated(cloneName);
+    qDebug() << "KVMManager: VM clonada exitosamente:" << cloneName;
+    
+    return true;
+}
+
 bool KVMManager::startVM(const QString &name)
 {
     VirtualMachine *vm = getVirtualMachine(name);

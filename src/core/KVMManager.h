@@ -25,6 +25,7 @@ public:
     bool createVirtualMachine(const QString &name, const QString &osType, 
                              int memoryMB, int diskSizeGB);
     bool deleteVirtualMachine(const QString &name);
+    bool cloneVirtualMachine(const QString &sourceName, const QString &cloneName);
     
     // VM Control
     bool startVM(const QString &name);

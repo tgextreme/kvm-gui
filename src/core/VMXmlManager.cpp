@@ -550,3 +550,73 @@ void VMXmlManager::parseSharedFolders(const QDomElement &element, VirtualMachine
     }
     vm->setSharedFolders(folders);
 }
+
+bool VMXmlManager::cloneVM(const QString &sourceName, const QString &cloneName)
+{
+    // Verificar que el VM origen existe y el clon no existe
+    if (!vmExists(sourceName)) {
+        QString error = tr("La VM origen '%1' no existe").arg(sourceName);
+        emit errorOccurred(error);
+        return false;
+    }
+    
+    if (vmExists(cloneName)) {
+        QString error = tr("Ya existe una VM con el nombre '%1'").arg(cloneName);
+        emit errorOccurred(error);
+        return false;
+    }
+    
+    // Cargar la VM origen
+    VirtualMachine *sourceVM = loadVM(sourceName);
+    if (!sourceVM) {
+        QString error = tr("No se pudo cargar la VM origen '%1'").arg(sourceName);
+        emit errorOccurred(error);
+        return false;
+    }
+    
+    // Crear una nueva VM basada en la original
+    VirtualMachine *cloneVM = new VirtualMachine(cloneName, this);
+    
+    // Copiar toda la configuración excepto nombre y UUID
+    cloneVM->setOSType(sourceVM->getOSType());
+    cloneVM->setMemoryMB(sourceVM->getMemoryMB());
+    cloneVM->setCPUCount(sourceVM->getCPUCount());
+    cloneVM->setDescription(sourceVM->getDescription() + tr(" (Clonado de %1)").arg(sourceName));
+    cloneVM->setHardDisks(sourceVM->getHardDisks());
+    cloneVM->setCDROMImage(sourceVM->getCDROMImage());
+    cloneVM->setNetworkAdapters(sourceVM->getNetworkAdapters());
+    cloneVM->setAudioController(sourceVM->getAudioController());
+    cloneVM->setUSBController(sourceVM->getUSBController());
+    cloneVM->setSharedFolders(sourceVM->getSharedFolders());
+    cloneVM->setVideoMemoryMB(sourceVM->getVideoMemoryMB());
+    cloneVM->set3DAcceleration(sourceVM->is3DAcceleration());
+    cloneVM->setMonitorCount(sourceVM->getMonitorCount());
+    cloneVM->setBootOrder(sourceVM->getBootOrder());
+    
+    // El UUID se generará automáticamente en el constructor de VirtualMachine
+    
+    // Actualizar rutas de discos duros para el clon
+    QStringList cloneDisks;
+    for (const QString &originalDisk : sourceVM->getHardDisks()) {
+        // Cambiar la ruta del disco original por la del clon
+        QString cloneDisk = originalDisk;
+        cloneDisk.replace(sourceName, cloneName);
+        cloneDisks.append(cloneDisk);
+    }
+    cloneVM->setHardDisks(cloneDisks);
+    
+    // Guardar el XML del clon
+    bool success = saveVM(cloneVM);
+    
+    // Limpiar memoria
+    delete sourceVM;
+    delete cloneVM;
+    
+    if (success) {
+        qDebug() << "VM clonada exitosamente:" << cloneName << "desde" << sourceName;
+        emit vmSaved(cloneName);
+        emit vmListChanged();
+    }
+    
+    return success;
+}
