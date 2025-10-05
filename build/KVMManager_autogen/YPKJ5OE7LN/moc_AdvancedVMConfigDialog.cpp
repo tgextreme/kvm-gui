@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'AdvancedVMConfigDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/AdvancedVMConfigDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'AdvancedVMConfigDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,16 +22,72 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN22AdvancedVMConfigDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN22AdvancedVMConfigDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_AdvancedVMConfigDialog_t {
+    uint offsetsAndSizes[54];
+    char stringdata0[23];
+    char stringdata1[7];
+    char stringdata2[1];
+    char stringdata3[14];
+    char stringdata4[21];
+    char stringdata5[22];
+    char stringdata6[6];
+    char stringdata7[20];
+    char stringdata8[18];
+    char stringdata9[19];
+    char stringdata10[12];
+    char stringdata11[15];
+    char stringdata12[15];
+    char stringdata13[16];
+    char stringdata14[19];
+    char stringdata15[10];
+    char stringdata16[26];
+    char stringdata17[18];
+    char stringdata18[21];
+    char stringdata19[24];
+    char stringdata20[19];
+    char stringdata21[22];
+    char stringdata22[25];
+    char stringdata23[16];
+    char stringdata24[19];
+    char stringdata25[19];
+    char stringdata26[17];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_AdvancedVMConfigDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_AdvancedVMConfigDialog_t qt_meta_stringdata_AdvancedVMConfigDialog = {
+    {
+        QT_MOC_LITERAL(0, 22),  // "AdvancedVMConfigDialog"
+        QT_MOC_LITERAL(23, 6),  // "accept"
+        QT_MOC_LITERAL(30, 0),  // ""
+        QT_MOC_LITERAL(31, 13),  // "onNameChanged"
+        QT_MOC_LITERAL(45, 20),  // "onDescriptionChanged"
+        QT_MOC_LITERAL(66, 21),  // "onMemorySliderChanged"
+        QT_MOC_LITERAL(88, 5),  // "value"
+        QT_MOC_LITERAL(94, 19),  // "onMemorySpinChanged"
+        QT_MOC_LITERAL(114, 17),  // "onCPUCountChanged"
+        QT_MOC_LITERAL(132, 18),  // "onBootOrderChanged"
+        QT_MOC_LITERAL(151, 11),  // "addHardDisk"
+        QT_MOC_LITERAL(163, 14),  // "removeHardDisk"
+        QT_MOC_LITERAL(178, 14),  // "modifyHardDisk"
+        QT_MOC_LITERAL(193, 15),  // "addOpticalDrive"
+        QT_MOC_LITERAL(209, 18),  // "removeOpticalDrive"
+        QT_MOC_LITERAL(228, 9),  // "selectISO"
+        QT_MOC_LITERAL(238, 25),  // "onStorageSelectionChanged"
+        QT_MOC_LITERAL(264, 17),  // "addNetworkAdapter"
+        QT_MOC_LITERAL(282, 20),  // "removeNetworkAdapter"
+        QT_MOC_LITERAL(303, 23),  // "onNetworkAdapterChanged"
+        QT_MOC_LITERAL(327, 18),  // "generateMACAddress"
+        QT_MOC_LITERAL(346, 21),  // "onAudioEnabledChanged"
+        QT_MOC_LITERAL(368, 24),  // "onAudioControllerChanged"
+        QT_MOC_LITERAL(393, 15),  // "addSharedFolder"
+        QT_MOC_LITERAL(409, 18),  // "removeSharedFolder"
+        QT_MOC_LITERAL(428, 18),  // "modifySharedFolder"
+        QT_MOC_LITERAL(447, 16)   // "selectFolderPath"
+    },
     "AdvancedVMConfigDialog",
     "accept",
     "",
@@ -65,15 +115,14 @@ static constexpr auto qt_meta_stringdata_ZN22AdvancedVMConfigDialogE = QtMocHelp
     "removeSharedFolder",
     "modifySharedFolder",
     "selectFolderPath"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN22AdvancedVMConfigDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_AdvancedVMConfigDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
       24,   14, // methods
@@ -140,11 +189,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN22AdvancedVMConfigDialogE[] = {
 
 Q_CONSTINIT const QMetaObject AdvancedVMConfigDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN22AdvancedVMConfigDialogE.offsetsAndSizes,
-    qt_meta_data_ZN22AdvancedVMConfigDialogE,
+    qt_meta_stringdata_AdvancedVMConfigDialog.offsetsAndSizes,
+    qt_meta_data_AdvancedVMConfigDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN22AdvancedVMConfigDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_AdvancedVMConfigDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<AdvancedVMConfigDialog, std::true_type>,
         // method 'accept'
@@ -204,8 +253,9 @@ Q_CONSTINIT const QMetaObject AdvancedVMConfigDialog::staticMetaObject = { {
 
 void AdvancedVMConfigDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<AdvancedVMConfigDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<AdvancedVMConfigDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->accept(); break;
         case 1: _t->onNameChanged(); break;
@@ -244,7 +294,7 @@ const QMetaObject *AdvancedVMConfigDialog::metaObject() const
 void *AdvancedVMConfigDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN22AdvancedVMConfigDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_AdvancedVMConfigDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -258,8 +308,7 @@ int AdvancedVMConfigDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a
         if (_id < 24)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 24;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 24)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 24;
@@ -267,12 +316,32 @@ int AdvancedVMConfigDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN17AddHardDiskDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN17AddHardDiskDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_AddHardDiskDialog_t {
+    uint offsetsAndSizes[18];
+    char stringdata0[18];
+    char stringdata1[19];
+    char stringdata2[1];
+    char stringdata3[8];
+    char stringdata4[21];
+    char stringdata5[16];
+    char stringdata6[21];
+    char stringdata7[16];
+    char stringdata8[14];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_AddHardDiskDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_AddHardDiskDialog_t qt_meta_stringdata_AddHardDiskDialog = {
+    {
+        QT_MOC_LITERAL(0, 17),  // "AddHardDiskDialog"
+        QT_MOC_LITERAL(18, 18),  // "onCreateNewToggled"
+        QT_MOC_LITERAL(37, 0),  // ""
+        QT_MOC_LITERAL(38, 7),  // "checked"
+        QT_MOC_LITERAL(46, 20),  // "onUseExistingToggled"
+        QT_MOC_LITERAL(67, 15),  // "onBrowseNewPath"
+        QT_MOC_LITERAL(83, 20),  // "onBrowseExistingPath"
+        QT_MOC_LITERAL(104, 15),  // "onFormatChanged"
+        QT_MOC_LITERAL(120, 13)   // "onSizeChanged"
+    },
     "AddHardDiskDialog",
     "onCreateNewToggled",
     "",
@@ -282,15 +351,14 @@ static constexpr auto qt_meta_stringdata_ZN17AddHardDiskDialogE = QtMocHelpers::
     "onBrowseExistingPath",
     "onFormatChanged",
     "onSizeChanged"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN17AddHardDiskDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_AddHardDiskDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        6,   14, // methods
@@ -321,11 +389,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN17AddHardDiskDialogE[] = {
 
 Q_CONSTINIT const QMetaObject AddHardDiskDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN17AddHardDiskDialogE.offsetsAndSizes,
-    qt_meta_data_ZN17AddHardDiskDialogE,
+    qt_meta_stringdata_AddHardDiskDialog.offsetsAndSizes,
+    qt_meta_data_AddHardDiskDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN17AddHardDiskDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_AddHardDiskDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<AddHardDiskDialog, std::true_type>,
         // method 'onCreateNewToggled'
@@ -348,8 +416,9 @@ Q_CONSTINIT const QMetaObject AddHardDiskDialog::staticMetaObject = { {
 
 void AddHardDiskDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<AddHardDiskDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<AddHardDiskDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->onCreateNewToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 1: _t->onUseExistingToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
@@ -370,7 +439,7 @@ const QMetaObject *AddHardDiskDialog::metaObject() const
 void *AddHardDiskDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN17AddHardDiskDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_AddHardDiskDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -384,8 +453,7 @@ int AddHardDiskDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 6;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 6;
@@ -393,27 +461,40 @@ int AddHardDiskDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN21AddOpticalDriveDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN21AddOpticalDriveDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_AddOpticalDriveDialog_t {
+    uint offsetsAndSizes[12];
+    char stringdata0[22];
+    char stringdata1[12];
+    char stringdata2[1];
+    char stringdata3[15];
+    char stringdata4[8];
+    char stringdata5[13];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_AddOpticalDriveDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_AddOpticalDriveDialog_t qt_meta_stringdata_AddOpticalDriveDialog = {
+    {
+        QT_MOC_LITERAL(0, 21),  // "AddOpticalDriveDialog"
+        QT_MOC_LITERAL(22, 11),  // "onBrowseISO"
+        QT_MOC_LITERAL(34, 0),  // ""
+        QT_MOC_LITERAL(35, 14),  // "onEmptyToggled"
+        QT_MOC_LITERAL(50, 7),  // "checked"
+        QT_MOC_LITERAL(58, 12)   // "onISOToggled"
+    },
     "AddOpticalDriveDialog",
     "onBrowseISO",
     "",
     "onEmptyToggled",
     "checked",
     "onISOToggled"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN21AddOpticalDriveDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_AddOpticalDriveDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
@@ -438,11 +519,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN21AddOpticalDriveDialogE[] = {
 
 Q_CONSTINIT const QMetaObject AddOpticalDriveDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN21AddOpticalDriveDialogE.offsetsAndSizes,
-    qt_meta_data_ZN21AddOpticalDriveDialogE,
+    qt_meta_stringdata_AddOpticalDriveDialog.offsetsAndSizes,
+    qt_meta_data_AddOpticalDriveDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN21AddOpticalDriveDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_AddOpticalDriveDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<AddOpticalDriveDialog, std::true_type>,
         // method 'onBrowseISO'
@@ -459,8 +540,9 @@ Q_CONSTINIT const QMetaObject AddOpticalDriveDialog::staticMetaObject = { {
 
 void AddOpticalDriveDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<AddOpticalDriveDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<AddOpticalDriveDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->onBrowseISO(); break;
         case 1: _t->onEmptyToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
@@ -478,7 +560,7 @@ const QMetaObject *AddOpticalDriveDialog::metaObject() const
 void *AddOpticalDriveDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN21AddOpticalDriveDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_AddOpticalDriveDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -492,8 +574,7 @@ int AddOpticalDriveDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 3;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 3;
@@ -501,25 +582,34 @@ int AddOpticalDriveDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN21AddSharedFolderDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN21AddSharedFolderDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_AddSharedFolderDialog_t {
+    uint offsetsAndSizes[8];
+    char stringdata0[22];
+    char stringdata1[13];
+    char stringdata2[1];
+    char stringdata3[14];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_AddSharedFolderDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_AddSharedFolderDialog_t qt_meta_stringdata_AddSharedFolderDialog = {
+    {
+        QT_MOC_LITERAL(0, 21),  // "AddSharedFolderDialog"
+        QT_MOC_LITERAL(22, 12),  // "onBrowsePath"
+        QT_MOC_LITERAL(35, 0),  // ""
+        QT_MOC_LITERAL(36, 13)   // "onNameChanged"
+    },
     "AddSharedFolderDialog",
     "onBrowsePath",
     "",
     "onNameChanged"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN21AddSharedFolderDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_AddSharedFolderDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
@@ -542,11 +632,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN21AddSharedFolderDialogE[] = {
 
 Q_CONSTINIT const QMetaObject AddSharedFolderDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN21AddSharedFolderDialogE.offsetsAndSizes,
-    qt_meta_data_ZN21AddSharedFolderDialogE,
+    qt_meta_stringdata_AddSharedFolderDialog.offsetsAndSizes,
+    qt_meta_data_AddSharedFolderDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN21AddSharedFolderDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_AddSharedFolderDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<AddSharedFolderDialog, std::true_type>,
         // method 'onBrowsePath'
@@ -559,8 +649,9 @@ Q_CONSTINIT const QMetaObject AddSharedFolderDialog::staticMetaObject = { {
 
 void AddSharedFolderDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<AddSharedFolderDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<AddSharedFolderDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->onBrowsePath(); break;
         case 1: _t->onNameChanged(); break;
@@ -578,7 +669,7 @@ const QMetaObject *AddSharedFolderDialog::metaObject() const
 void *AddSharedFolderDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN21AddSharedFolderDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_AddSharedFolderDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -592,8 +683,7 @@ int AddSharedFolderDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 2;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 2;
@@ -601,3 +691,4 @@ int AddSharedFolderDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

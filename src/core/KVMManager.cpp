@@ -19,6 +19,7 @@ KVMManager::KVMManager(QObject *parent)
     , m_xmlManager(new VMXmlManager(this))
     , m_qemuManager(new QemuManager(this))
     , m_libvirtRunning(false)
+    , m_loadingVMs(false)
 {
     // Set default VM path
     m_defaultVMPath = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) 
@@ -52,9 +53,10 @@ KVMManager::KVMManager(QObject *parent)
     // Always load VMs from XML files, regardless of libvirt status
     loadVirtualMachines();
     
-    if (m_libvirtRunning) {
-        m_stateCheckTimer->start();
-    }
+    // Disable timer-based state checking for now to prevent excessive reloading
+    // if (m_libvirtRunning) {
+    //     m_stateCheckTimer->start();
+    // }
 }
 
 KVMManager::~KVMManager()
@@ -91,6 +93,14 @@ void KVMManager::initializeKVM()
 
 void KVMManager::loadVirtualMachines()
 {
+    // Prevent infinite loop by checking if we're already loading
+    if (m_loadingVMs) {
+        qDebug() << "KVMManager: Ya está cargando VMs, evitando bucle infinito";
+        return;
+    }
+    
+    m_loadingVMs = true;
+    
     // Clear existing VMs
     qDeleteAll(m_virtualMachines);
     m_virtualMachines.clear();
@@ -109,7 +119,7 @@ void KVMManager::loadVirtualMachines()
         }
     }
     
-    
+    m_loadingVMs = false;
     emit vmListChanged();
 }
 
@@ -150,7 +160,7 @@ VirtualMachine* KVMManager::getVirtualMachine(const QString &name) const
 }
 
 bool KVMManager::createVirtualMachine(const QString &name, const QString &osType, 
-                                    int memoryMB, int /*diskSizeGB*/)
+                                    int memoryMB, int diskSizeGB)
 {
     // Check if VM already exists
     if (m_xmlManager->vmExists(name)) {
@@ -172,9 +182,10 @@ bool KVMManager::createVirtualMachine(const QString &name, const QString &osType
     QString vmDir = QDir::homePath() + "/.VM/" + name;
     QDir().mkpath(vmDir);
     
-    // Create disk only if diskSizeGB > 0 (from wizard)
+    // Create disk with the specified size (use diskSizeGB parameter)
     QString diskPath = vmDir + "/" + name + ".qcow2";
-    if (!m_qemuManager->createDisk(diskPath, "qcow2", 25, false)) {
+    qDebug() << "KVMManager: Creando disco de" << diskSizeGB << "GB en" << diskPath;
+    if (!m_qemuManager->createDisk(diskPath, "qcow2", diskSizeGB, false)) {
         delete vm;
         emit errorOccurred(tr("No se pudo crear el disco virtual para '%1'").arg(name));
         return false;
@@ -196,26 +207,44 @@ bool KVMManager::createVirtualMachine(const QString &name, const QString &osType
 }
 
 bool KVMManager::deleteVirtualMachine(const QString &name)
-{
-    if (!m_libvirtRunning) {
-        emit errorOccurred(tr("Libvirt no está disponible"));
-        return false;
-    }
-    
+{    
     VirtualMachine *vm = getVirtualMachine(name);
     if (!vm) {
         emit errorOccurred(tr("Máquina virtual '%1' no encontrada").arg(name));
         return false;
     }
     
-    // Delete XML file
+    // Get disk paths before deleting VM
+    QStringList diskPaths = vm->getHardDisks();
+    
+    // Delete XML file first
     if (m_xmlManager->deleteVM(name)) {
+        // Delete associated disk files
+        for (const QString &diskPath : diskPaths) {
+            QFile diskFile(diskPath);
+            if (diskFile.exists()) {
+                if (diskFile.remove()) {
+                    qDebug() << "KVMManager: Disco eliminado:" << diskPath;
+                } else {
+                    qDebug() << "KVMManager: No se pudo eliminar disco:" << diskPath;
+                }
+            }
+        }
+        
+        // Delete VM directory if empty
+        QString vmDir = QDir::homePath() + "/.VM/" + name;
+        QDir dir(vmDir);
+        if (dir.exists() && dir.isEmpty()) {
+            dir.rmdir(vmDir);
+            qDebug() << "KVMManager: Directorio VM eliminado:" << vmDir;
+        }
+        
         // Remove from memory list
         m_virtualMachines.removeAll(vm);
         delete vm;
         
         emit vmDeleted(name);
-        qDebug() << "VM eliminada:" << name;
+        qDebug() << "KVMManager: VM completamente eliminada:" << name;
         return true;
     } else {
         return false;
@@ -413,8 +442,14 @@ void KVMManager::checkVMStates()
         return;
     }
     
-    // Reload VM list to get current states
-    loadVirtualMachines();
+    // Just check states of existing VMs, don't reload from XML
+    for (VirtualMachine *vm : m_virtualMachines) {
+        if (vm) {
+            // Check VM state through libvirt or qemu if needed
+            // For now, we'll skip the expensive reload operation
+            // TODO: Implement actual state checking without full reload
+        }
+    }
 }
 
 void KVMManager::onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus)

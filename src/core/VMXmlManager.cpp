@@ -120,10 +120,12 @@ VirtualMachine* VMXmlManager::loadVM(const QString &vmName)
     
     qDebug() << "VMXmlManager: Contenido XML leído para" << vmName << ":" << content.left(200) << "...";
     
-    QDomDocument::ParseResult result = doc.setContent(content);
-    if (!result) {
+    QString errorMessage;
+    int errorLine, errorColumn;
+    bool parseResult = doc.setContent(content, &errorMessage, &errorLine, &errorColumn);
+    if (!parseResult) {
         QString error = tr("Error XML en %1 (línea %2, columna %3): %4")
-                       .arg(filePath).arg(result.errorLine).arg(result.errorColumn).arg(result.errorMessage);
+                       .arg(filePath).arg(errorLine).arg(errorColumn).arg(errorMessage);
         emit errorOccurred(error);
         qDebug() << "VMXmlManager: Error en parseo XML:" << error;
         return nullptr;

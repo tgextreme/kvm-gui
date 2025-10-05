@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MediaManagerDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/MediaManagerDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'MediaManagerDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,16 +22,58 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN18MediaManagerDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN18MediaManagerDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_MediaManagerDialog_t {
+    uint offsetsAndSizes[40];
+    char stringdata0[19];
+    char stringdata1[12];
+    char stringdata2[1];
+    char stringdata3[15];
+    char stringdata4[16];
+    char stringdata5[17];
+    char stringdata6[13];
+    char stringdata7[13];
+    char stringdata8[15];
+    char stringdata9[27];
+    char stringdata10[15];
+    char stringdata11[18];
+    char stringdata12[19];
+    char stringdata13[20];
+    char stringdata14[30];
+    char stringdata15[14];
+    char stringdata16[17];
+    char stringdata17[18];
+    char stringdata18[19];
+    char stringdata19[29];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_MediaManagerDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_MediaManagerDialog_t qt_meta_stringdata_MediaManagerDialog = {
+    {
+        QT_MOC_LITERAL(0, 18),  // "MediaManagerDialog"
+        QT_MOC_LITERAL(19, 11),  // "addHardDisk"
+        QT_MOC_LITERAL(31, 0),  // ""
+        QT_MOC_LITERAL(32, 14),  // "removeHardDisk"
+        QT_MOC_LITERAL(47, 15),  // "releaseHardDisk"
+        QT_MOC_LITERAL(63, 16),  // "refreshHardDisks"
+        QT_MOC_LITERAL(80, 12),  // "copyHardDisk"
+        QT_MOC_LITERAL(93, 12),  // "moveHardDisk"
+        QT_MOC_LITERAL(106, 14),  // "resizeHardDisk"
+        QT_MOC_LITERAL(121, 26),  // "onHardDiskSelectionChanged"
+        QT_MOC_LITERAL(148, 14),  // "addOpticalDisc"
+        QT_MOC_LITERAL(163, 17),  // "removeOpticalDisc"
+        QT_MOC_LITERAL(181, 18),  // "releaseOpticalDisc"
+        QT_MOC_LITERAL(200, 19),  // "refreshOpticalDiscs"
+        QT_MOC_LITERAL(220, 29),  // "onOpticalDiscSelectionChanged"
+        QT_MOC_LITERAL(250, 13),  // "addFloppyDisk"
+        QT_MOC_LITERAL(264, 16),  // "removeFloppyDisk"
+        QT_MOC_LITERAL(281, 17),  // "releaseFloppyDisk"
+        QT_MOC_LITERAL(299, 18),  // "refreshFloppyDisks"
+        QT_MOC_LITERAL(318, 28)   // "onFloppyDiskSelectionChanged"
+    },
     "MediaManagerDialog",
     "addHardDisk",
     "",
@@ -58,15 +94,14 @@ static constexpr auto qt_meta_stringdata_ZN18MediaManagerDialogE = QtMocHelpers:
     "releaseFloppyDisk",
     "refreshFloppyDisks",
     "onFloppyDiskSelectionChanged"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN18MediaManagerDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_MediaManagerDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
       18,   14, // methods
@@ -121,11 +156,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN18MediaManagerDialogE[] = {
 
 Q_CONSTINIT const QMetaObject MediaManagerDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN18MediaManagerDialogE.offsetsAndSizes,
-    qt_meta_data_ZN18MediaManagerDialogE,
+    qt_meta_stringdata_MediaManagerDialog.offsetsAndSizes,
+    qt_meta_data_MediaManagerDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN18MediaManagerDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_MediaManagerDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MediaManagerDialog, std::true_type>,
         // method 'addHardDisk'
@@ -170,8 +205,9 @@ Q_CONSTINIT const QMetaObject MediaManagerDialog::staticMetaObject = { {
 
 void MediaManagerDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<MediaManagerDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<MediaManagerDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->addHardDisk(); break;
         case 1: _t->removeHardDisk(); break;
@@ -205,7 +241,7 @@ const QMetaObject *MediaManagerDialog::metaObject() const
 void *MediaManagerDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN18MediaManagerDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_MediaManagerDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -219,8 +255,7 @@ int MediaManagerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 18;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 18)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 18;
@@ -228,3 +263,4 @@ int MediaManagerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

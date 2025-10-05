@@ -74,6 +74,7 @@ private:
     VMXmlManager *m_xmlManager;
     QemuManager *m_qemuManager;
     bool m_libvirtRunning;
+    bool m_loadingVMs;
 };
 
 #endif // KVMMANAGER_H

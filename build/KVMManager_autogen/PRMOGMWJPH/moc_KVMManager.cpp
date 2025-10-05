@@ -1,24 +1,18 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'KVMManager.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/core/KVMManager.h"
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'KVMManager.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -27,16 +21,48 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN10KVMManagerE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN10KVMManagerE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_KVMManager_t {
+    uint offsetsAndSizes[30];
+    char stringdata0[11];
+    char stringdata1[14];
+    char stringdata2[1];
+    char stringdata3[15];
+    char stringdata4[5];
+    char stringdata5[6];
+    char stringdata6[10];
+    char stringdata7[10];
+    char stringdata8[14];
+    char stringdata9[6];
+    char stringdata10[14];
+    char stringdata11[18];
+    char stringdata12[9];
+    char stringdata13[21];
+    char stringdata14[11];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_KVMManager_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_KVMManager_t qt_meta_stringdata_KVMManager = {
+    {
+        QT_MOC_LITERAL(0, 10),  // "KVMManager"
+        QT_MOC_LITERAL(11, 13),  // "vmListChanged"
+        QT_MOC_LITERAL(25, 0),  // ""
+        QT_MOC_LITERAL(26, 14),  // "vmStateChanged"
+        QT_MOC_LITERAL(41, 4),  // "name"
+        QT_MOC_LITERAL(46, 5),  // "state"
+        QT_MOC_LITERAL(52, 9),  // "vmCreated"
+        QT_MOC_LITERAL(62, 9),  // "vmDeleted"
+        QT_MOC_LITERAL(72, 13),  // "errorOccurred"
+        QT_MOC_LITERAL(86, 5),  // "error"
+        QT_MOC_LITERAL(92, 13),  // "checkVMStates"
+        QT_MOC_LITERAL(106, 17),  // "onProcessFinished"
+        QT_MOC_LITERAL(124, 8),  // "exitCode"
+        QT_MOC_LITERAL(133, 20),  // "QProcess::ExitStatus"
+        QT_MOC_LITERAL(154, 10)   // "exitStatus"
+    },
     "KVMManager",
     "vmListChanged",
     "",
@@ -52,15 +78,14 @@ static constexpr auto qt_meta_stringdata_ZN10KVMManagerE = QtMocHelpers::stringD
     "exitCode",
     "QProcess::ExitStatus",
     "exitStatus"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN10KVMManagerE[] = {
+Q_CONSTINIT static const uint qt_meta_data_KVMManager[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        7,   14, // methods
@@ -97,11 +122,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN10KVMManagerE[] = {
 
 Q_CONSTINIT const QMetaObject KVMManager::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_ZN10KVMManagerE.offsetsAndSizes,
-    qt_meta_data_ZN10KVMManagerE,
+    qt_meta_stringdata_KVMManager.offsetsAndSizes,
+    qt_meta_data_KVMManager,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN10KVMManagerE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_KVMManager_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<KVMManager, std::true_type>,
         // method 'vmListChanged'
@@ -131,8 +156,9 @@ Q_CONSTINIT const QMetaObject KVMManager::staticMetaObject = { {
 
 void KVMManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<KVMManager *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<KVMManager *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->vmListChanged(); break;
         case 1: _t->vmStateChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
@@ -143,40 +169,39 @@ void KVMManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->onProcessFinished((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QProcess::ExitStatus>>(_a[2]))); break;
         default: ;
         }
-    }
-    if (_c == QMetaObject::IndexOfMethod) {
+    } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _q_method_type = void (KVMManager::*)();
-            if (_q_method_type _q_method = &KVMManager::vmListChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (KVMManager::*)();
+            if (_t _q_method = &KVMManager::vmListChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _q_method_type = void (KVMManager::*)(const QString & , const QString & );
-            if (_q_method_type _q_method = &KVMManager::vmStateChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (KVMManager::*)(const QString & , const QString & );
+            if (_t _q_method = &KVMManager::vmStateChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
         }
         {
-            using _q_method_type = void (KVMManager::*)(const QString & );
-            if (_q_method_type _q_method = &KVMManager::vmCreated; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (KVMManager::*)(const QString & );
+            if (_t _q_method = &KVMManager::vmCreated; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 2;
                 return;
             }
         }
         {
-            using _q_method_type = void (KVMManager::*)(const QString & );
-            if (_q_method_type _q_method = &KVMManager::vmDeleted; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (KVMManager::*)(const QString & );
+            if (_t _q_method = &KVMManager::vmDeleted; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 3;
                 return;
             }
         }
         {
-            using _q_method_type = void (KVMManager::*)(const QString & );
-            if (_q_method_type _q_method = &KVMManager::errorOccurred; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (KVMManager::*)(const QString & );
+            if (_t _q_method = &KVMManager::errorOccurred; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 4;
                 return;
             }
@@ -192,7 +217,7 @@ const QMetaObject *KVMManager::metaObject() const
 void *KVMManager::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN10KVMManagerE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_KVMManager.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
@@ -206,8 +231,7 @@ int KVMManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 7;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 7;
@@ -249,3 +273,4 @@ void KVMManager::errorOccurred(const QString & _t1)
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

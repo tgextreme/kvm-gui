@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/KVMManager.dir/link.d"
   "CMakeFiles/KVMManager_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/KVMManager_autogen.dir/ParseCache.txt"
   "KVMManager_autogen"

@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'NewVMDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/NewVMDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'NewVMDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,26 +22,29 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN11NewVMDialogE_t {};
+struct qt_meta_stringdata_NewVMDialog_t {
+    uint offsetsAndSizes[2];
+    char stringdata0[12];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_NewVMDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_NewVMDialog_t qt_meta_stringdata_NewVMDialog = {
+    {
+        QT_MOC_LITERAL(0, 11)   // "NewVMDialog"
+    },
+    "NewVMDialog"
+};
+#undef QT_MOC_LITERAL
 } // unnamed namespace
 
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN11NewVMDialogE = QtMocHelpers::stringData(
-    "NewVMDialog"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
-
-Q_CONSTINIT static const uint qt_meta_data_ZN11NewVMDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_NewVMDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -62,11 +59,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11NewVMDialogE[] = {
 
 Q_CONSTINIT const QMetaObject NewVMDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QWizard::staticMetaObject>(),
-    qt_meta_stringdata_ZN11NewVMDialogE.offsetsAndSizes,
-    qt_meta_data_ZN11NewVMDialogE,
+    qt_meta_stringdata_NewVMDialog.offsetsAndSizes,
+    qt_meta_data_NewVMDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN11NewVMDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_NewVMDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<NewVMDialog, std::true_type>
     >,
@@ -75,10 +72,9 @@ Q_CONSTINIT const QMetaObject NewVMDialog::staticMetaObject = { {
 
 void NewVMDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<NewVMDialog *>(_o);
-    (void)_t;
-    (void)_c;
+    (void)_o;
     (void)_id;
+    (void)_c;
     (void)_a;
 }
 
@@ -90,7 +86,7 @@ const QMetaObject *NewVMDialog::metaObject() const
 void *NewVMDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN11NewVMDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_NewVMDialog.stringdata0))
         return static_cast<void*>(this);
     return QWizard::qt_metacast(_clname);
 }
@@ -101,22 +97,25 @@ int NewVMDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN11WelcomePageE_t {};
+struct qt_meta_stringdata_WelcomePage_t {
+    uint offsetsAndSizes[2];
+    char stringdata0[12];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_WelcomePage_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_WelcomePage_t qt_meta_stringdata_WelcomePage = {
+    {
+        QT_MOC_LITERAL(0, 11)   // "WelcomePage"
+    },
+    "WelcomePage"
+};
+#undef QT_MOC_LITERAL
 } // unnamed namespace
 
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN11WelcomePageE = QtMocHelpers::stringData(
-    "WelcomePage"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
-
-Q_CONSTINIT static const uint qt_meta_data_ZN11WelcomePageE[] = {
+Q_CONSTINIT static const uint qt_meta_data_WelcomePage[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -131,11 +130,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11WelcomePageE[] = {
 
 Q_CONSTINIT const QMetaObject WelcomePage::staticMetaObject = { {
     QMetaObject::SuperData::link<QWizardPage::staticMetaObject>(),
-    qt_meta_stringdata_ZN11WelcomePageE.offsetsAndSizes,
-    qt_meta_data_ZN11WelcomePageE,
+    qt_meta_stringdata_WelcomePage.offsetsAndSizes,
+    qt_meta_data_WelcomePage,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN11WelcomePageE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_WelcomePage_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<WelcomePage, std::true_type>
     >,
@@ -144,10 +143,9 @@ Q_CONSTINIT const QMetaObject WelcomePage::staticMetaObject = { {
 
 void WelcomePage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<WelcomePage *>(_o);
-    (void)_t;
-    (void)_c;
+    (void)_o;
     (void)_id;
+    (void)_c;
     (void)_a;
 }
 
@@ -159,7 +157,7 @@ const QMetaObject *WelcomePage::metaObject() const
 void *WelcomePage::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN11WelcomePageE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_WelcomePage.stringdata0))
         return static_cast<void*>(this);
     return QWizardPage::qt_metacast(_clname);
 }
@@ -170,25 +168,34 @@ int WelcomePage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN10SystemPageE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN10SystemPageE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_SystemPage_t {
+    uint offsetsAndSizes[8];
+    char stringdata0[11];
+    char stringdata1[18];
+    char stringdata2[1];
+    char stringdata3[6];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_SystemPage_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_SystemPage_t qt_meta_stringdata_SystemPage = {
+    {
+        QT_MOC_LITERAL(0, 10),  // "SystemPage"
+        QT_MOC_LITERAL(11, 17),  // "updateMemoryLabel"
+        QT_MOC_LITERAL(29, 0),  // ""
+        QT_MOC_LITERAL(30, 5)   // "value"
+    },
     "SystemPage",
     "updateMemoryLabel",
     "",
     "value"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN10SystemPageE[] = {
+Q_CONSTINIT static const uint qt_meta_data_SystemPage[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        1,   14, // methods
@@ -209,11 +216,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN10SystemPageE[] = {
 
 Q_CONSTINIT const QMetaObject SystemPage::staticMetaObject = { {
     QMetaObject::SuperData::link<QWizardPage::staticMetaObject>(),
-    qt_meta_stringdata_ZN10SystemPageE.offsetsAndSizes,
-    qt_meta_data_ZN10SystemPageE,
+    qt_meta_stringdata_SystemPage.offsetsAndSizes,
+    qt_meta_data_SystemPage,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN10SystemPageE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_SystemPage_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SystemPage, std::true_type>,
         // method 'updateMemoryLabel'
@@ -225,8 +232,9 @@ Q_CONSTINIT const QMetaObject SystemPage::staticMetaObject = { {
 
 void SystemPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<SystemPage *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<SystemPage *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->updateMemoryLabel((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
@@ -242,7 +250,7 @@ const QMetaObject *SystemPage::metaObject() const
 void *SystemPage::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN10SystemPageE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_SystemPage.stringdata0))
         return static_cast<void*>(this);
     return QWizardPage::qt_metacast(_clname);
 }
@@ -256,8 +264,7 @@ int SystemPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 1;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 1)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 1;
@@ -265,26 +272,37 @@ int SystemPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN12HardDiskPageE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN12HardDiskPageE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_HardDiskPage_t {
+    uint offsetsAndSizes[10];
+    char stringdata0[13];
+    char stringdata1[19];
+    char stringdata2[1];
+    char stringdata3[20];
+    char stringdata4[6];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_HardDiskPage_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_HardDiskPage_t qt_meta_stringdata_HardDiskPage = {
+    {
+        QT_MOC_LITERAL(0, 12),  // "HardDiskPage"
+        QT_MOC_LITERAL(13, 18),  // "selectDiskLocation"
+        QT_MOC_LITERAL(32, 0),  // ""
+        QT_MOC_LITERAL(33, 19),  // "updateDiskSizeLabel"
+        QT_MOC_LITERAL(53, 5)   // "value"
+    },
     "HardDiskPage",
     "selectDiskLocation",
     "",
     "updateDiskSizeLabel",
     "value"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN12HardDiskPageE[] = {
+Q_CONSTINIT static const uint qt_meta_data_HardDiskPage[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
@@ -307,11 +325,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN12HardDiskPageE[] = {
 
 Q_CONSTINIT const QMetaObject HardDiskPage::staticMetaObject = { {
     QMetaObject::SuperData::link<QWizardPage::staticMetaObject>(),
-    qt_meta_stringdata_ZN12HardDiskPageE.offsetsAndSizes,
-    qt_meta_data_ZN12HardDiskPageE,
+    qt_meta_stringdata_HardDiskPage.offsetsAndSizes,
+    qt_meta_data_HardDiskPage,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN12HardDiskPageE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_HardDiskPage_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<HardDiskPage, std::true_type>,
         // method 'selectDiskLocation'
@@ -325,8 +343,9 @@ Q_CONSTINIT const QMetaObject HardDiskPage::staticMetaObject = { {
 
 void HardDiskPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<HardDiskPage *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<HardDiskPage *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->selectDiskLocation(); break;
         case 1: _t->updateDiskSizeLabel((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
@@ -343,7 +362,7 @@ const QMetaObject *HardDiskPage::metaObject() const
 void *HardDiskPage::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN12HardDiskPageE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_HardDiskPage.stringdata0))
         return static_cast<void*>(this);
     return QWizardPage::qt_metacast(_clname);
 }
@@ -357,8 +376,7 @@ int HardDiskPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 2;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 2;
@@ -366,22 +384,25 @@ int HardDiskPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN11SummaryPageE_t {};
+struct qt_meta_stringdata_SummaryPage_t {
+    uint offsetsAndSizes[2];
+    char stringdata0[12];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_SummaryPage_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_SummaryPage_t qt_meta_stringdata_SummaryPage = {
+    {
+        QT_MOC_LITERAL(0, 11)   // "SummaryPage"
+    },
+    "SummaryPage"
+};
+#undef QT_MOC_LITERAL
 } // unnamed namespace
 
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN11SummaryPageE = QtMocHelpers::stringData(
-    "SummaryPage"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
-
-Q_CONSTINIT static const uint qt_meta_data_ZN11SummaryPageE[] = {
+Q_CONSTINIT static const uint qt_meta_data_SummaryPage[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -396,11 +417,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11SummaryPageE[] = {
 
 Q_CONSTINIT const QMetaObject SummaryPage::staticMetaObject = { {
     QMetaObject::SuperData::link<QWizardPage::staticMetaObject>(),
-    qt_meta_stringdata_ZN11SummaryPageE.offsetsAndSizes,
-    qt_meta_data_ZN11SummaryPageE,
+    qt_meta_stringdata_SummaryPage.offsetsAndSizes,
+    qt_meta_data_SummaryPage,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN11SummaryPageE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_SummaryPage_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SummaryPage, std::true_type>
     >,
@@ -409,10 +430,9 @@ Q_CONSTINIT const QMetaObject SummaryPage::staticMetaObject = { {
 
 void SummaryPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<SummaryPage *>(_o);
-    (void)_t;
-    (void)_c;
+    (void)_o;
     (void)_id;
+    (void)_c;
     (void)_a;
 }
 
@@ -424,7 +444,7 @@ const QMetaObject *SummaryPage::metaObject() const
 void *SummaryPage::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN11SummaryPageE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_SummaryPage.stringdata0))
         return static_cast<void*>(this);
     return QWizardPage::qt_metacast(_clname);
 }
@@ -435,3 +455,4 @@ int SummaryPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

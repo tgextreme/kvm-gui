@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'DiskManagerDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/DiskManagerDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'DiskManagerDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,16 +22,40 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN17DiskManagerDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN17DiskManagerDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_DiskManagerDialog_t {
+    uint offsetsAndSizes[22];
+    char stringdata0[18];
+    char stringdata1[13];
+    char stringdata2[1];
+    char stringdata3[11];
+    char stringdata4[13];
+    char stringdata5[13];
+    char stringdata6[14];
+    char stringdata7[14];
+    char stringdata8[23];
+    char stringdata9[13];
+    char stringdata10[6];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_DiskManagerDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_DiskManagerDialog_t qt_meta_stringdata_DiskManagerDialog = {
+    {
+        QT_MOC_LITERAL(0, 17),  // "DiskManagerDialog"
+        QT_MOC_LITERAL(18, 12),  // "onCreateDisk"
+        QT_MOC_LITERAL(31, 0),  // ""
+        QT_MOC_LITERAL(32, 10),  // "onCopyDisk"
+        QT_MOC_LITERAL(43, 12),  // "onModifyDisk"
+        QT_MOC_LITERAL(56, 12),  // "onRemoveDisk"
+        QT_MOC_LITERAL(69, 13),  // "onReleaseDisk"
+        QT_MOC_LITERAL(83, 13),  // "onRefreshList"
+        QT_MOC_LITERAL(97, 22),  // "onDiskSelectionChanged"
+        QT_MOC_LITERAL(120, 12),  // "onTabChanged"
+        QT_MOC_LITERAL(133, 5)   // "index"
+    },
     "DiskManagerDialog",
     "onCreateDisk",
     "",
@@ -49,15 +67,14 @@ static constexpr auto qt_meta_stringdata_ZN17DiskManagerDialogE = QtMocHelpers::
     "onDiskSelectionChanged",
     "onTabChanged",
     "index"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN17DiskManagerDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_DiskManagerDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        8,   14, // methods
@@ -92,11 +109,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN17DiskManagerDialogE[] = {
 
 Q_CONSTINIT const QMetaObject DiskManagerDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN17DiskManagerDialogE.offsetsAndSizes,
-    qt_meta_data_ZN17DiskManagerDialogE,
+    qt_meta_stringdata_DiskManagerDialog.offsetsAndSizes,
+    qt_meta_data_DiskManagerDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN17DiskManagerDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_DiskManagerDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<DiskManagerDialog, std::true_type>,
         // method 'onCreateDisk'
@@ -122,8 +139,9 @@ Q_CONSTINIT const QMetaObject DiskManagerDialog::staticMetaObject = { {
 
 void DiskManagerDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<DiskManagerDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<DiskManagerDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->onCreateDisk(); break;
         case 1: _t->onCopyDisk(); break;
@@ -146,7 +164,7 @@ const QMetaObject *DiskManagerDialog::metaObject() const
 void *DiskManagerDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN17DiskManagerDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_DiskManagerDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -160,8 +178,7 @@ int DiskManagerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 8;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 8;
@@ -169,26 +186,37 @@ int DiskManagerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN23CreateVirtualDiskDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN23CreateVirtualDiskDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_CreateVirtualDiskDialog_t {
+    uint offsetsAndSizes[10];
+    char stringdata0[24];
+    char stringdata1[13];
+    char stringdata2[1];
+    char stringdata3[16];
+    char stringdata4[14];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_CreateVirtualDiskDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CreateVirtualDiskDialog_t qt_meta_stringdata_CreateVirtualDiskDialog = {
+    {
+        QT_MOC_LITERAL(0, 23),  // "CreateVirtualDiskDialog"
+        QT_MOC_LITERAL(24, 12),  // "onBrowsePath"
+        QT_MOC_LITERAL(37, 0),  // ""
+        QT_MOC_LITERAL(38, 15),  // "onFormatChanged"
+        QT_MOC_LITERAL(54, 13)   // "onSizeChanged"
+    },
     "CreateVirtualDiskDialog",
     "onBrowsePath",
     "",
     "onFormatChanged",
     "onSizeChanged"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN23CreateVirtualDiskDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_CreateVirtualDiskDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
@@ -213,11 +241,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN23CreateVirtualDiskDialogE[] = {
 
 Q_CONSTINIT const QMetaObject CreateVirtualDiskDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN23CreateVirtualDiskDialogE.offsetsAndSizes,
-    qt_meta_data_ZN23CreateVirtualDiskDialogE,
+    qt_meta_stringdata_CreateVirtualDiskDialog.offsetsAndSizes,
+    qt_meta_data_CreateVirtualDiskDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN23CreateVirtualDiskDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CreateVirtualDiskDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<CreateVirtualDiskDialog, std::true_type>,
         // method 'onBrowsePath'
@@ -232,8 +260,9 @@ Q_CONSTINIT const QMetaObject CreateVirtualDiskDialog::staticMetaObject = { {
 
 void CreateVirtualDiskDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<CreateVirtualDiskDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<CreateVirtualDiskDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->onBrowsePath(); break;
         case 1: _t->onFormatChanged(); break;
@@ -252,7 +281,7 @@ const QMetaObject *CreateVirtualDiskDialog::metaObject() const
 void *CreateVirtualDiskDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN23CreateVirtualDiskDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CreateVirtualDiskDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -266,8 +295,7 @@ int CreateVirtualDiskDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_
         if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 3;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 3;
@@ -275,22 +303,25 @@ int CreateVirtualDiskDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_
     return _id;
 }
 namespace {
-struct qt_meta_tag_ZN20DiskPropertiesDialogE_t {};
+struct qt_meta_stringdata_DiskPropertiesDialog_t {
+    uint offsetsAndSizes[2];
+    char stringdata0[21];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_DiskPropertiesDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_DiskPropertiesDialog_t qt_meta_stringdata_DiskPropertiesDialog = {
+    {
+        QT_MOC_LITERAL(0, 20)   // "DiskPropertiesDialog"
+    },
+    "DiskPropertiesDialog"
+};
+#undef QT_MOC_LITERAL
 } // unnamed namespace
 
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN20DiskPropertiesDialogE = QtMocHelpers::stringData(
-    "DiskPropertiesDialog"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
-
-Q_CONSTINIT static const uint qt_meta_data_ZN20DiskPropertiesDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_DiskPropertiesDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -305,11 +336,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN20DiskPropertiesDialogE[] = {
 
 Q_CONSTINIT const QMetaObject DiskPropertiesDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN20DiskPropertiesDialogE.offsetsAndSizes,
-    qt_meta_data_ZN20DiskPropertiesDialogE,
+    qt_meta_stringdata_DiskPropertiesDialog.offsetsAndSizes,
+    qt_meta_data_DiskPropertiesDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN20DiskPropertiesDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_DiskPropertiesDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<DiskPropertiesDialog, std::true_type>
     >,
@@ -318,10 +349,9 @@ Q_CONSTINIT const QMetaObject DiskPropertiesDialog::staticMetaObject = { {
 
 void DiskPropertiesDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<DiskPropertiesDialog *>(_o);
-    (void)_t;
-    (void)_c;
+    (void)_o;
     (void)_id;
+    (void)_c;
     (void)_a;
 }
 
@@ -333,7 +363,7 @@ const QMetaObject *DiskPropertiesDialog::metaObject() const
 void *DiskPropertiesDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN20DiskPropertiesDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_DiskPropertiesDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -344,3 +374,4 @@ int DiskPropertiesDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

@@ -1,24 +1,18 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VirtualMachine.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/core/VirtualMachine.h"
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VirtualMachine.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -27,16 +21,46 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN14VirtualMachineE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN14VirtualMachineE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_VirtualMachine_t {
+    uint offsetsAndSizes[28];
+    char stringdata0[15];
+    char stringdata1[13];
+    char stringdata2[1];
+    char stringdata3[9];
+    char stringdata4[9];
+    char stringdata5[21];
+    char stringdata6[6];
+    char stringdata7[8];
+    char stringdata8[8];
+    char stringdata9[8];
+    char stringdata10[7];
+    char stringdata11[6];
+    char stringdata12[9];
+    char stringdata13[9];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_VirtualMachine_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_VirtualMachine_t qt_meta_stringdata_VirtualMachine = {
+    {
+        QT_MOC_LITERAL(0, 14),  // "VirtualMachine"
+        QT_MOC_LITERAL(15, 12),  // "stateChanged"
+        QT_MOC_LITERAL(28, 0),  // ""
+        QT_MOC_LITERAL(29, 8),  // "oldState"
+        QT_MOC_LITERAL(38, 8),  // "newState"
+        QT_MOC_LITERAL(47, 20),  // "configurationChanged"
+        QT_MOC_LITERAL(68, 5),  // "State"
+        QT_MOC_LITERAL(74, 7),  // "Unknown"
+        QT_MOC_LITERAL(82, 7),  // "ShutOff"
+        QT_MOC_LITERAL(90, 7),  // "Running"
+        QT_MOC_LITERAL(98, 6),  // "Paused"
+        QT_MOC_LITERAL(105, 5),  // "Saved"
+        QT_MOC_LITERAL(111, 8),  // "Starting"
+        QT_MOC_LITERAL(120, 8)   // "Stopping"
+    },
     "VirtualMachine",
     "stateChanged",
     "",
@@ -51,15 +75,14 @@ static constexpr auto qt_meta_stringdata_ZN14VirtualMachineE = QtMocHelpers::str
     "Saved",
     "Starting",
     "Stopping"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN14VirtualMachineE[] = {
+Q_CONSTINIT static const uint qt_meta_data_VirtualMachine[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
@@ -70,8 +93,8 @@ Q_CONSTINIT static const uint qt_meta_data_ZN14VirtualMachineE[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,   26,    2, 0x06,    2 /* Public */,
-       5,    0,   31,    2, 0x06,    5 /* Public */,
+       1,    2,   26,    2, 0x06,    1 /* Public */,
+       5,    0,   31,    2, 0x06,    4 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString, QMetaType::QString,    3,    4,
@@ -94,13 +117,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN14VirtualMachineE[] = {
 
 Q_CONSTINIT const QMetaObject VirtualMachine::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_ZN14VirtualMachineE.offsetsAndSizes,
-    qt_meta_data_ZN14VirtualMachineE,
+    qt_meta_stringdata_VirtualMachine.offsetsAndSizes,
+    qt_meta_data_VirtualMachine,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN14VirtualMachineE_t,
-        // enum 'State'
-        QtPrivate::TypeAndForceComplete<VirtualMachine::State, std::true_type>,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_VirtualMachine_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<VirtualMachine, std::true_type>,
         // method 'stateChanged'
@@ -115,26 +136,26 @@ Q_CONSTINIT const QMetaObject VirtualMachine::staticMetaObject = { {
 
 void VirtualMachine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<VirtualMachine *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<VirtualMachine *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->stateChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 1: _t->configurationChanged(); break;
         default: ;
         }
-    }
-    if (_c == QMetaObject::IndexOfMethod) {
+    } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _q_method_type = void (VirtualMachine::*)(const QString & , const QString & );
-            if (_q_method_type _q_method = &VirtualMachine::stateChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (VirtualMachine::*)(const QString & , const QString & );
+            if (_t _q_method = &VirtualMachine::stateChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _q_method_type = void (VirtualMachine::*)();
-            if (_q_method_type _q_method = &VirtualMachine::configurationChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (VirtualMachine::*)();
+            if (_t _q_method = &VirtualMachine::configurationChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
@@ -150,7 +171,7 @@ const QMetaObject *VirtualMachine::metaObject() const
 void *VirtualMachine::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN14VirtualMachineE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_VirtualMachine.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
@@ -164,8 +185,7 @@ int VirtualMachine::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 2;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 2;
@@ -186,3 +206,4 @@ void VirtualMachine::configurationChanged()
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

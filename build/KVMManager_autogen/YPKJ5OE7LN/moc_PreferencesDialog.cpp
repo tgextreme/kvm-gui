@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PreferencesDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/PreferencesDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'PreferencesDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,16 +22,42 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN17PreferencesDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN17PreferencesDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_PreferencesDialog_t {
+    uint offsetsAndSizes[24];
+    char stringdata0[18];
+    char stringdata1[22];
+    char stringdata2[1];
+    char stringdata3[21];
+    char stringdata4[18];
+    char stringdata5[21];
+    char stringdata6[14];
+    char stringdata7[17];
+    char stringdata8[15];
+    char stringdata9[19];
+    char stringdata10[22];
+    char stringdata11[20];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_PreferencesDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_PreferencesDialog_t qt_meta_stringdata_PreferencesDialog = {
+    {
+        QT_MOC_LITERAL(0, 17),  // "PreferencesDialog"
+        QT_MOC_LITERAL(18, 21),  // "selectDefaultVMFolder"
+        QT_MOC_LITERAL(40, 0),  // ""
+        QT_MOC_LITERAL(41, 20),  // "selectSnapshotFolder"
+        QT_MOC_LITERAL(62, 17),  // "onLanguageChanged"
+        QT_MOC_LITERAL(80, 20),  // "onUpdateCheckChanged"
+        QT_MOC_LITERAL(101, 13),  // "addNATNetwork"
+        QT_MOC_LITERAL(115, 16),  // "removeNATNetwork"
+        QT_MOC_LITERAL(132, 14),  // "editNATNetwork"
+        QT_MOC_LITERAL(147, 18),  // "addHostOnlyNetwork"
+        QT_MOC_LITERAL(166, 21),  // "removeHostOnlyNetwork"
+        QT_MOC_LITERAL(188, 19)   // "editHostOnlyNetwork"
+    },
     "PreferencesDialog",
     "selectDefaultVMFolder",
     "",
@@ -50,15 +70,14 @@ static constexpr auto qt_meta_stringdata_ZN17PreferencesDialogE = QtMocHelpers::
     "addHostOnlyNetwork",
     "removeHostOnlyNetwork",
     "editHostOnlyNetwork"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN17PreferencesDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_PreferencesDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
       10,   14, // methods
@@ -97,11 +116,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN17PreferencesDialogE[] = {
 
 Q_CONSTINIT const QMetaObject PreferencesDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN17PreferencesDialogE.offsetsAndSizes,
-    qt_meta_data_ZN17PreferencesDialogE,
+    qt_meta_stringdata_PreferencesDialog.offsetsAndSizes,
+    qt_meta_data_PreferencesDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN17PreferencesDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_PreferencesDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<PreferencesDialog, std::true_type>,
         // method 'selectDefaultVMFolder'
@@ -130,8 +149,9 @@ Q_CONSTINIT const QMetaObject PreferencesDialog::staticMetaObject = { {
 
 void PreferencesDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<PreferencesDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<PreferencesDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->selectDefaultVMFolder(); break;
         case 1: _t->selectSnapshotFolder(); break;
@@ -157,7 +177,7 @@ const QMetaObject *PreferencesDialog::metaObject() const
 void *PreferencesDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN17PreferencesDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_PreferencesDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -171,8 +191,7 @@ int PreferencesDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 10;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 10;
@@ -180,3 +199,4 @@ int PreferencesDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

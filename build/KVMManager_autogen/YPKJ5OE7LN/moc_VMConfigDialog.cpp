@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VMConfigDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/VMConfigDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VMConfigDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,16 +22,54 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN14VMConfigDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN14VMConfigDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_VMConfigDialog_t {
+    uint offsetsAndSizes[36];
+    char stringdata0[15];
+    char stringdata1[7];
+    char stringdata2[1];
+    char stringdata3[22];
+    char stringdata4[6];
+    char stringdata5[18];
+    char stringdata6[12];
+    char stringdata7[15];
+    char stringdata8[9];
+    char stringdata9[14];
+    char stringdata10[18];
+    char stringdata11[21];
+    char stringdata12[16];
+    char stringdata13[19];
+    char stringdata14[23];
+    char stringdata15[17];
+    char stringdata16[8];
+    char stringdata17[16];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_VMConfigDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_VMConfigDialog_t qt_meta_stringdata_VMConfigDialog = {
+    {
+        QT_MOC_LITERAL(0, 14),  // "VMConfigDialog"
+        QT_MOC_LITERAL(15, 6),  // "accept"
+        QT_MOC_LITERAL(22, 0),  // ""
+        QT_MOC_LITERAL(23, 21),  // "onMemorySliderChanged"
+        QT_MOC_LITERAL(45, 5),  // "value"
+        QT_MOC_LITERAL(51, 17),  // "onCPUCountChanged"
+        QT_MOC_LITERAL(69, 11),  // "addHardDisk"
+        QT_MOC_LITERAL(81, 14),  // "removeHardDisk"
+        QT_MOC_LITERAL(96, 8),  // "addCDDVD"
+        QT_MOC_LITERAL(105, 13),  // "selectBootISO"
+        QT_MOC_LITERAL(119, 17),  // "addNetworkAdapter"
+        QT_MOC_LITERAL(137, 20),  // "removeNetworkAdapter"
+        QT_MOC_LITERAL(158, 15),  // "addSharedFolder"
+        QT_MOC_LITERAL(174, 18),  // "removeSharedFolder"
+        QT_MOC_LITERAL(193, 22),  // "selectSharedFolderPath"
+        QT_MOC_LITERAL(216, 16),  // "enableEncryption"
+        QT_MOC_LITERAL(233, 7),  // "enabled"
+        QT_MOC_LITERAL(241, 15)   // "testAudioDevice"
+    },
     "VMConfigDialog",
     "accept",
     "",
@@ -56,15 +88,14 @@ static constexpr auto qt_meta_stringdata_ZN14VMConfigDialogE = QtMocHelpers::str
     "enableEncryption",
     "enabled",
     "testAudioDevice"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN14VMConfigDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_VMConfigDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
       14,   14, // methods
@@ -111,11 +142,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN14VMConfigDialogE[] = {
 
 Q_CONSTINIT const QMetaObject VMConfigDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN14VMConfigDialogE.offsetsAndSizes,
-    qt_meta_data_ZN14VMConfigDialogE,
+    qt_meta_stringdata_VMConfigDialog.offsetsAndSizes,
+    qt_meta_data_VMConfigDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN14VMConfigDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_VMConfigDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<VMConfigDialog, std::true_type>,
         // method 'accept'
@@ -155,8 +186,9 @@ Q_CONSTINIT const QMetaObject VMConfigDialog::staticMetaObject = { {
 
 void VMConfigDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<VMConfigDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<VMConfigDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->accept(); break;
         case 1: _t->onMemorySliderChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
@@ -185,7 +217,7 @@ const QMetaObject *VMConfigDialog::metaObject() const
 void *VMConfigDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN14VMConfigDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_VMConfigDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -199,8 +231,7 @@ int VMConfigDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 14;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 14)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 14;
@@ -208,3 +239,4 @@ int VMConfigDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

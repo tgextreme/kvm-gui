@@ -1,25 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'SnapshotManagerDialog.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/ui/SnapshotManagerDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'SnapshotManagerDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -28,16 +22,34 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN21SnapshotManagerDialogE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN21SnapshotManagerDialogE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_SnapshotManagerDialog_t {
+    uint offsetsAndSizes[16];
+    char stringdata0[22];
+    char stringdata1[13];
+    char stringdata2[1];
+    char stringdata3[15];
+    char stringdata4[16];
+    char stringdata5[20];
+    char stringdata6[18];
+    char stringdata7[27];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_SnapshotManagerDialog_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_SnapshotManagerDialog_t qt_meta_stringdata_SnapshotManagerDialog = {
+    {
+        QT_MOC_LITERAL(0, 21),  // "SnapshotManagerDialog"
+        QT_MOC_LITERAL(22, 12),  // "takeSnapshot"
+        QT_MOC_LITERAL(35, 0),  // ""
+        QT_MOC_LITERAL(36, 14),  // "deleteSnapshot"
+        QT_MOC_LITERAL(51, 15),  // "restoreSnapshot"
+        QT_MOC_LITERAL(67, 19),  // "showSnapshotDetails"
+        QT_MOC_LITERAL(87, 17),  // "cloneFromSnapshot"
+        QT_MOC_LITERAL(105, 26)   // "onSnapshotSelectionChanged"
+    },
     "SnapshotManagerDialog",
     "takeSnapshot",
     "",
@@ -46,15 +58,14 @@ static constexpr auto qt_meta_stringdata_ZN21SnapshotManagerDialogE = QtMocHelpe
     "showSnapshotDetails",
     "cloneFromSnapshot",
     "onSnapshotSelectionChanged"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN21SnapshotManagerDialogE[] = {
+Q_CONSTINIT static const uint qt_meta_data_SnapshotManagerDialog[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        6,   14, // methods
@@ -85,11 +96,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN21SnapshotManagerDialogE[] = {
 
 Q_CONSTINIT const QMetaObject SnapshotManagerDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN21SnapshotManagerDialogE.offsetsAndSizes,
-    qt_meta_data_ZN21SnapshotManagerDialogE,
+    qt_meta_stringdata_SnapshotManagerDialog.offsetsAndSizes,
+    qt_meta_data_SnapshotManagerDialog,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN21SnapshotManagerDialogE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_SnapshotManagerDialog_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SnapshotManagerDialog, std::true_type>,
         // method 'takeSnapshot'
@@ -110,8 +121,9 @@ Q_CONSTINIT const QMetaObject SnapshotManagerDialog::staticMetaObject = { {
 
 void SnapshotManagerDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<SnapshotManagerDialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<SnapshotManagerDialog *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->takeSnapshot(); break;
         case 1: _t->deleteSnapshot(); break;
@@ -133,7 +145,7 @@ const QMetaObject *SnapshotManagerDialog::metaObject() const
 void *SnapshotManagerDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN21SnapshotManagerDialogE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_SnapshotManagerDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
@@ -147,8 +159,7 @@ int SnapshotManagerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 6;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 6;
@@ -156,3 +167,4 @@ int SnapshotManagerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

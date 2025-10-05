@@ -1,24 +1,18 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'VMXmlManager.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../../../src/core/VMXmlManager.h"
 #include <QtCore/qmetatype.h>
-
-#include <QtCore/qtmochelpers.h>
-
-#include <memory>
-
-
-#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'VMXmlManager.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.8.2. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -27,16 +21,34 @@
 #define Q_CONSTINIT
 #endif
 
+QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN12VMXmlManagerE_t {};
-} // unnamed namespace
-
-
-#ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN12VMXmlManagerE = QtMocHelpers::stringData(
+struct qt_meta_stringdata_VMXmlManager_t {
+    uint offsetsAndSizes[16];
+    char stringdata0[13];
+    char stringdata1[14];
+    char stringdata2[1];
+    char stringdata3[8];
+    char stringdata4[7];
+    char stringdata5[10];
+    char stringdata6[14];
+    char stringdata7[6];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_VMXmlManager_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_VMXmlManager_t qt_meta_stringdata_VMXmlManager = {
+    {
+        QT_MOC_LITERAL(0, 12),  // "VMXmlManager"
+        QT_MOC_LITERAL(13, 13),  // "vmListChanged"
+        QT_MOC_LITERAL(27, 0),  // ""
+        QT_MOC_LITERAL(28, 7),  // "vmSaved"
+        QT_MOC_LITERAL(36, 6),  // "vmName"
+        QT_MOC_LITERAL(43, 9),  // "vmDeleted"
+        QT_MOC_LITERAL(53, 13),  // "errorOccurred"
+        QT_MOC_LITERAL(67, 5)   // "error"
+    },
     "VMXmlManager",
     "vmListChanged",
     "",
@@ -45,15 +57,14 @@ static constexpr auto qt_meta_stringdata_ZN12VMXmlManagerE = QtMocHelpers::strin
     "vmDeleted",
     "errorOccurred",
     "error"
-);
-#else  // !QT_MOC_HAS_STRINGDATA
-#error "qtmochelpers.h not found or too old."
-#endif // !QT_MOC_HAS_STRINGDATA
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_ZN12VMXmlManagerE[] = {
+Q_CONSTINIT static const uint qt_meta_data_VMXmlManager[] = {
 
  // content:
-      12,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        4,   14, // methods
@@ -80,11 +91,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN12VMXmlManagerE[] = {
 
 Q_CONSTINIT const QMetaObject VMXmlManager::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_ZN12VMXmlManagerE.offsetsAndSizes,
-    qt_meta_data_ZN12VMXmlManagerE,
+    qt_meta_stringdata_VMXmlManager.offsetsAndSizes,
+    qt_meta_data_VMXmlManager,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN12VMXmlManagerE_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_VMXmlManager_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<VMXmlManager, std::true_type>,
         // method 'vmListChanged'
@@ -104,8 +115,9 @@ Q_CONSTINIT const QMetaObject VMXmlManager::staticMetaObject = { {
 
 void VMXmlManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<VMXmlManager *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<VMXmlManager *>(_o);
+        (void)_t;
         switch (_id) {
         case 0: _t->vmListChanged(); break;
         case 1: _t->vmSaved((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
@@ -113,33 +125,32 @@ void VMXmlManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->errorOccurred((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
-    }
-    if (_c == QMetaObject::IndexOfMethod) {
+    } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _q_method_type = void (VMXmlManager::*)();
-            if (_q_method_type _q_method = &VMXmlManager::vmListChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (VMXmlManager::*)();
+            if (_t _q_method = &VMXmlManager::vmListChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _q_method_type = void (VMXmlManager::*)(const QString & );
-            if (_q_method_type _q_method = &VMXmlManager::vmSaved; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (VMXmlManager::*)(const QString & );
+            if (_t _q_method = &VMXmlManager::vmSaved; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
         }
         {
-            using _q_method_type = void (VMXmlManager::*)(const QString & );
-            if (_q_method_type _q_method = &VMXmlManager::vmDeleted; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (VMXmlManager::*)(const QString & );
+            if (_t _q_method = &VMXmlManager::vmDeleted; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 2;
                 return;
             }
         }
         {
-            using _q_method_type = void (VMXmlManager::*)(const QString & );
-            if (_q_method_type _q_method = &VMXmlManager::errorOccurred; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            using _t = void (VMXmlManager::*)(const QString & );
+            if (_t _q_method = &VMXmlManager::errorOccurred; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 3;
                 return;
             }
@@ -155,7 +166,7 @@ const QMetaObject *VMXmlManager::metaObject() const
 void *VMXmlManager::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN12VMXmlManagerE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_VMXmlManager.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
@@ -169,8 +180,7 @@ int VMXmlManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 4;
-    }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 4;
@@ -205,3 +215,4 @@ void VMXmlManager::errorOccurred(const QString & _t1)
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 QT_WARNING_POP
+QT_END_MOC_NAMESPACE

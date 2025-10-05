@@ -276,14 +276,29 @@ void MainWindow::removeVM()
         return;
     }
     
-    int ret = QMessageBox::question(this, tr("Eliminar VM"),
-                                  tr("¿Está seguro de que desea eliminar la máquina virtual '%1'?").arg(selectedVM),
-                                  QMessageBox::Yes | QMessageBox::No);
+    // Crear un diálogo de confirmación más detallado
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle(tr("Eliminar VM"));
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setText(tr("¿Está seguro de que desea eliminar la máquina virtual '%1'?").arg(selectedVM));
+    msgBox.setInformativeText(tr("Esta acción eliminará:\n• La configuración de la VM\n• Todos los discos duros virtuales\n• Todos los archivos asociados\n\nEsta acción no se puede deshacer."));
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    msgBox.button(QMessageBox::Yes)->setText(tr("Sí, eliminar"));
+    msgBox.button(QMessageBox::No)->setText(tr("Cancelar"));
+    
+    int ret = msgBox.exec();
     
     if (ret == QMessageBox::Yes) {
-        // TODO: Implement VM removal
-        QMessageBox::information(this, tr("Eliminar VM"), 
-                               tr("Funcionalidad de eliminación será implementada próximamente."));
+        if (m_kvmManager->deleteVirtualMachine(selectedVM)) {
+            m_vmListWidget->refreshVMList();
+            m_statusLabel->setText(tr("Máquina virtual '%1' eliminada correctamente").arg(selectedVM));
+            QMessageBox::information(this, tr("VM Eliminada"), 
+                                   tr("La máquina virtual '%1' y todos sus archivos han sido eliminados correctamente.").arg(selectedVM));
+        } else {
+            QMessageBox::critical(this, tr("Error"), 
+                                tr("No se pudo eliminar la máquina virtual '%1'. Consulte los logs para más información.").arg(selectedVM));
+        }
     }
 }
 
