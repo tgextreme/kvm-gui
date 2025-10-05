@@ -444,13 +444,14 @@ QStringList QemuManager::buildQemuCommand(VirtualMachine *vm)
     if (!bootOrder.isEmpty()) {
         QString bootString;
         for (const QString &device : bootOrder) {
-            if (device == "Disco Duro") {
+            // Manejar tanto nombres en español como en inglés para compatibilidad
+            if (device == "Hard Disk" || device == "Disco Duro") {
                 bootString += "c";  // hard disk
-            } else if (device == "CD/DVD") {
+            } else if (device == "CD/DVD" || device == "CDROM") {
                 bootString += "d";  // cdrom
-            } else if (device == "Red") {
+            } else if (device == "Network" || device == "Red") {
                 bootString += "n";  // network
-            } else if (device == "Disquete") {
+            } else if (device == "Floppy" || device == "Disquete") {
                 bootString += "a";  // floppy
             }
         }

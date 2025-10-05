@@ -173,7 +173,7 @@ void AdvancedVMConfigDialog::setupSystemTab()
     auto *bootLayout = new QHBoxLayout(bootGroup);
     
     m_bootOrderList = new QListWidget;
-    m_bootOrderList->addItems({"Disco Duro", "CD/DVD", "Red", "Disquete"});
+    m_bootOrderList->addItems({"Hard Disk", "CD/DVD", "Network", "Floppy"});
     
     auto *bootButtonLayout = new QVBoxLayout;
     m_bootUpButton = new QPushButton("↑");
